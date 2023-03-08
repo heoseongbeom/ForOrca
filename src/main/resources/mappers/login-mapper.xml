@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="loginMapper">
+
+	<resultMap id="loginResult" type="Login">
+		<result column="mem_no" property="memNo" />
+	  	<result column="mem_name" property="memName" />
+	  	<result column="mem_email" property="memEmail" />
+	  	<result column="mem_pwd" property="memPwd" />
+	  	<result column="mem_instar_id" property="memInstarId" />
+	  	<result column="mem_enroll_date" property="memEnrollDate" />
+	  	<result column="mem_state" property="memState" />
+	</resultMap>
+	
+	<select id="loginOrca" resultMap="loginResult">
+		select
+		       mem_no
+			 , mem_name
+			 , mem_email
+			 , mem_pwd
+			 , mem_instar_id
+			 , mem_enroll_date
+			 , mem_state
+		  from member
+	</select>
+
+</mapper>
