@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="loginMapper">
+<mapper namespace="memberMapper">
 
-	<resultMap id="loginResult" type="Login">
+	<resultMap id="memberResult" type="Member">
 		<result column="mem_no" property="memNo" />
 	  	<result column="mem_name" property="memName" />
 	  	<result column="mem_email" property="memEmail" />
@@ -12,7 +12,7 @@
 	  	<result column="mem_state" property="memState" />
 	</resultMap>
 	
-	<select id="loginOrca" resultMap="loginResult">
+	<select id="loginMember" resultMap="memberResult">
 		select
 		       mem_no
 			 , mem_name
@@ -22,6 +22,8 @@
 			 , mem_enroll_date
 			 , mem_state
 		  from member
+		 where mem_email = #{memEmail}
+		   and mem_pwd = #{memPwd}
 	</select>
 
 </mapper>
