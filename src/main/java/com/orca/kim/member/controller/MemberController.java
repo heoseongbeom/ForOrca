@@ -1,4 +1,4 @@
-package com.orca.kim.login.controller;
+package com.orca.kim.member.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -7,24 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.orca.kim.login.model.service.LoginService;
-import com.orca.kim.login.model.vo.Login;
+import com.orca.kim.member.model.service.MemberService;
+import com.orca.kim.member.model.vo.Member;
 
 @Controller
-public class LoginController {
+public class MemberController {
 
 		
 		@Autowired
-		private LoginService lService;
+		private MemberService mService;
 		
 		
 		@RequestMapping("login.me")
-		public ModelAndView loginOrca(Login l, HttpSession session, ModelAndView mv) {
-			System.out.println(l);
-			Login user = lService.loginOrca(l);
-			System.out.println(user);
-			if(user != null) {
-				session.setAttribute("user", user);
+		public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) {
+			System.out.println(m);
+			Member loginUser = mService.loginMember(m);
+			System.out.println(loginUser);
+			if(loginUser != null) {
+				session.setAttribute("loginUser", loginUser);
 				mv.setViewName("main");
 				return mv;
 			}else {

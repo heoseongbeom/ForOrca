@@ -1,4 +1,4 @@
-package com.orca.kim.login.model.vo;
+package com.orca.kim.member.model.vo;
 
 import java.sql.Date;
 
@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString 
-public class Login {
+public class Member {
 
 	private String memNo;
 	private String memName;
