@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mainMapper">
+
+	<resultMap id="mainResult" type="MainPage">
+		<result column="main_instar_address" property="mainInstarAddress" />
+		<result column="main_admin_name" property="mainAdminName" />
+		<result column="main_admin_intro" property="mainAdminIntro" />
+		<result column="main_photo_orgin" property="mainPhotoOrigin" />
+		<result column="main_photo_change" property="mainPhotoChange" />
+	</resultMap>
+	
+	<select id="selectMain" resultMap="mainResult">
+		select
+			   main_instar_address
+			 , main_admin_name
+			 , main_admin_intro
+			 , main_photo_origin
+			 , main_photo_change
+	      from main
+	</select>
+
+</mapper>
