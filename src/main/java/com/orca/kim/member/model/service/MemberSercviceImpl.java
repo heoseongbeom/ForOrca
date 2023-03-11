@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orca.kim.member.model.dao.MemberDao;
+import com.orca.kim.member.model.vo.MainPage;
 import com.orca.kim.member.model.vo.Member;
 
 @Service
@@ -25,6 +26,11 @@ public class MemberSercviceImpl implements MemberService{
 	// 회원가입 기능
 	public int signupMember(Member m) {
 		return mDao.signupMember(sqlSession, m);
+	}
+	
+	// 메인 페이지 select
+	public MainPage selectMain() {
+		return mDao.selectMain(sqlSession);
 	}
 
 }

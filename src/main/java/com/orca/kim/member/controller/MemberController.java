@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.orca.kim.member.model.service.MemberService;
+import com.orca.kim.member.model.vo.MainPage;
 import com.orca.kim.member.model.vo.Member;
 
 @Controller
@@ -21,9 +22,10 @@ public class MemberController {
 		@RequestMapping("login.me")
 		public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) {
 			Member loginUser = mService.loginMember(m);
+			MainPage mp = mService.selectMain();
 			if(loginUser != null) {
 				session.setAttribute("loginUser", loginUser);
-				mv.setViewName("main");
+				mv.addObject("mp", mp).setViewName("main");
 				return mv;
 			}else {
 				session.setAttribute("alertTitle", "로그인 실패");
@@ -42,7 +44,7 @@ public class MemberController {
 			return "member/login";
 		}
 		
-		// 회워가입 컨트롤러
+		// 회원가입 컨트롤러
 		@RequestMapping("signup.me")
 		public ModelAndView signupMember(Member m, HttpSession session, ModelAndView mv) {
 			
@@ -60,6 +62,13 @@ public class MemberController {
 				return mv;
 				
 			}
+			
+		}
+		
+		// 관리자 메인페이지 수정페이지 접속
+		@RequestMapping("mainUpdate.me")
+		public String adminMember() {
+			return "mainUpdate";
 			
 		}
 
