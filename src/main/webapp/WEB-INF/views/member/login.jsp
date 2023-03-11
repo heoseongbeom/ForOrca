@@ -273,7 +273,7 @@ body.swal2-height-auto{
 <c:if test="${ not empty alertMsg }">
 		<script>
              Swal.fire({
-                 title: '로그인 실패',
+                 title: "${alertTitle}",
                  text: "${alertMsg}",
                  allowOutsideClick: false,
                  showConfirmButton: true,
@@ -311,7 +311,7 @@ body.swal2-height-auto{
     </div>
     <!-- Sign Up -->
     <div class="container__form container--signup">
-      <form action="#" class="form" id="form1" method="post">
+      <form action="signup.me" class="form" id="form1" method="post">
         <h2 class="form__title">Sign Up</h2>
         <input type="text" name="memName" id="userName" placeholder="User" class="input" style="height:5px"  required/>
         <input type="email" name="memEmail" id="userEmail" name="email"  placeholder="Email" class="input" style="height:5px" required/>
