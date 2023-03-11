@@ -12,6 +12,7 @@
 	  	<result column="mem_state" property="memState" />
 	</resultMap>
 	
+	
 	<select id="loginMember" resultMap="memberResult">
 		select
 		       mem_no
@@ -48,7 +49,15 @@
 		  , default
 		  , 2
 		  )
-		  
 	</insert>
+
+
+
+
+
+
+
+
+
 
 </mapper>
