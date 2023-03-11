@@ -25,5 +25,30 @@
 		 where mem_email = #{memEmail}
 		   and mem_pwd = #{memPwd}
 	</select>
+	
+	<insert id="signupMember">
+		insert
+		  into member
+		  (
+            mem_no		  
+		  , mem_name
+		  , mem_email
+		  , mem_pwd
+		  , mem_instar_id
+		  , mem_enroll_date
+		  , mem_state
+		  )
+		  values
+		  (
+		    seq_memno.nextval
+		  , #{memName}
+		  , #{memEmail}
+		  , #{memPwd}
+		  , #{memInstarId}
+		  , default
+		  , 2
+		  )
+		  
+	</insert>
 
 </mapper>

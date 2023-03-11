@@ -16,10 +16,15 @@ public class MemberSercviceImpl implements MemberService{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
+	// 로그인 기능
 	@Override
 	public Member loginMember(Member m) {
 		return mDao.loginMember(sqlSession, m);
 	}
 	
+	// 회원가입 기능
+	public int signupMember(Member m) {
+		return mDao.signupMember(sqlSession, m);
+	}
 
 }
