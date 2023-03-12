@@ -428,12 +428,7 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../img/tattoo2.jpg") top right;
-  background-size: cover;
-}
+
 
 #hero .container {
   padding-top: 70px;
