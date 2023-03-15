@@ -29,13 +29,13 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/범고래.jpg">orca</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a  href="main.me">Home</a></li>
+          <li><a  href="mainPage.me">Home</a></li>
           <li><a class="active" href="about.me">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
@@ -46,10 +46,11 @@
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+		<a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">logout</a>
+        <c:if test="${ loginUser.memState eq '1' }">
+        	<a href="aboutUpdateForm.me" data-toggle="modal">Update Page</a>
+        </c:if>
       </div>
 
     </div>

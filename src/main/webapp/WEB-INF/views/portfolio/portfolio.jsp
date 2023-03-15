@@ -30,13 +30,13 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/범고래.jpg">orca</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="main.me">Home</a></li>
+          <li><a href="mainPage.me">Home</a></li>
           <li><a href="about.me">About</a></li>
           <li><a href="schedule.me">schedule</a></li>
           <li><a href="finance.me">finance</a></li>
