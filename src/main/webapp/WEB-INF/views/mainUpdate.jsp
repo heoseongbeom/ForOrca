@@ -6,64 +6,70 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
-<!-- Favicons -->
-  <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+	<!-- Favicons -->
+	<link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
+	<link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	
+	<!-- Vendor CSS Files -->
+	<link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <style>
-  .btn {
-	background-color: #000000;
-	background-image: linear-gradient(90deg, #3c454a 0%, #687576 74%);
-	border-radius: 20px;
-	border: 1px solid #606468;
-	color: white;
-	cursor: pointer;
-	font-size: 0.8rem;
-	font-weight: bold;
-	letter-spacing: 0.1rem;
-	padding: 0.9rem 4rem;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
-
-.form > .btn {
-	margin-top: 1.5rem;
-}
-
-.btn:active {
-	transform: scale(0.95);
-}
-
-.btn:focus {
-	outline: none;
-}
+	.btn {
+		background-color: #000000;
+		background-image: linear-gradient(90deg, #3c454a 0%, #687576 74%);
+		border-radius: 20px;
+		border: 1px solid #606468;
+		color: white;
+		cursor: pointer;
+		font-size: 0.8rem;
+		font-weight: bold;
+		letter-spacing: 0.1rem;
+		padding: 0.9rem 4rem;
+		text-transform: uppercase;
+		transition: transform 80ms ease-in;
+	}
+	
+	.form > .btn {
+		margin-top: 1.5rem;
+	}
+	
+	.btn:active {
+		transform: scale(0.95);
+	}
+	
+	.btn:focus {
+		outline: none;
+	}
+	#hero {
+		width: 100%;
+		height: 100vh;
+		background: url(${mp.mainPhotoChange}) top right;
+		background-size: cover;
+	}
 </style>
   <!-- Template Main CSS File -->
 </head>
 <body>
-<form action="">
+<form action="updateMain.me" enctype="multipart/form-data" method="post">
 	<!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg"><input type="text" value="$"></h1>
+      <h1 class="logo me-auto me-lg-0" style="display:flex;"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">${ mp.mainAdminName }</h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="active" href="main.me">Home</a></li>
+          <li><a class="active" href="mainPage.me">Home</a></li>
           <li><a href="about.me">About</a></li>
           <li><a href="schedule.me">schedule</a></li>
           <li><a href="finance.me">finance</a></li>
@@ -78,10 +84,8 @@
      
 
       <div class="header-social-links" style="display: contents;">
-       
-        <input type="text" name="instarAddress" class="form-control" style="width:300px;">
-        <button type="submit" class="btn">수정완료</button>
-        &nbsp;
+        <input type="text" name="mainInstarAddress" class="form-control" style="width:400px;" value="${ mp.mainInstarAddress }">
+        <button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
         <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">logout</a>
       </div>
 
@@ -93,9 +97,11 @@
 <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center" id="mainForm" data-aos="zoom-in" data-aos-delay="100">
-      <h1  style="margin-bottom:10px; text-shadow:0px 0px 1px">${ mp.mainAdminName }</h1>
-      <h2><input type="text" name="mainAdminInto" value="${ mp.mainAdminIntro }" class="form-control" style="width:700px"></h2>
-      <a href="about.me" class="btn-about">About Me</a>
+      <h1  style="margin-bottom:10px; text-shadow:0px 0px 1px"><input type="text" name="mainAdminName" class="form-control" value="${ mp.mainAdminName }"></h1>
+      <h2><input type="text" name="mainAdminIntro" value="${ mp.mainAdminIntro }" class="form-control" style="width:700px"></h2>
+      <!--  <a href="about.me" class="btn-about">About Me</a>-->
+      <br><br><br><br><br>
+      <input type="file" class="form-control" name="upfile" style="color:white; width: 300px;">
     </div>
   </section><!-- End Hero -->
 
