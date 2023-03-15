@@ -24,13 +24,21 @@ public class MemberSercviceImpl implements MemberService{
 	}
 	
 	// 회원가입 기능
+	@Override
 	public int signupMember(Member m) {
 		return mDao.signupMember(sqlSession, m);
 	}
 	
 	// 메인 페이지 select
+	@Override
 	public MainPage selectMain() {
 		return mDao.selectMain(sqlSession);
+	}
+	
+	// 메인 페이지 update
+	@Override
+	public int updateMain(MainPage mp) {
+		return mDao.updateMain(sqlSession, mp);
 	}
 
 }
