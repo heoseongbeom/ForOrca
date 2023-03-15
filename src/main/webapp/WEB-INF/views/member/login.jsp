@@ -270,7 +270,7 @@ body.swal2-height-auto{
 
 <body>
 
-<c:if test="${ not empty alertMsg }">
+  <c:if test="${ not empty alertMsg }">
 		<script>
              Swal.fire({
                  title: "${alertTitle}",
