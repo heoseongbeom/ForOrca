@@ -6,8 +6,10 @@
 		<result column="main_instar_address" property="mainInstarAddress" />
 		<result column="main_admin_name" property="mainAdminName" />
 		<result column="main_admin_intro" property="mainAdminIntro" />
-		<result column="main_photo_orgin" property="mainPhotoOrigin" />
+		<result column="main_photo_origin" property="mainPhotoOrigin" />
 		<result column="main_photo_change" property="mainPhotoChange" />
+		<result column="main_icon_origin" property="mainIconOrigin" />
+		<result column="main_icon_change" property="mainIconChange" />
 	</resultMap>
 	
 	<select id="selectMain" resultMap="mainResult">
@@ -19,5 +21,16 @@
 			 , main_photo_change
 	      from main
 	</select>
+	
+	<update id="updateMain">
+		update
+		       main
+		   set main_instar_address = #{mainInstarAddress}
+			 , main_admin_name = #{mainAdminName}
+			 , main_admin_intro = #{mainAdminIntro}
+			 , main_photo_origin = #{mainPhotoOrigin}
+			 , main_photo_change = #{mainPhotoChange}
+	     where main_no = 1
+	</update>
 
 </mapper>
