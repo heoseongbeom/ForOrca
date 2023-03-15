@@ -7,8 +7,38 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
+  <c:if test="${ not empty alertMsg }">
+		<script>
+             Swal.fire({
+                 title: "${alertTitle}",
+                 text: "${alertMsg}",
+                 allowOutsideClick: false,
+                 showConfirmButton: true,
+                 showCancelButton: false,
+                 closeOnConfirm: true,
+                 closeOnCancel: true,
+                 confirmButtonText: 'OK',
+                 confirmButtonColor: 'slategray',
+                 cancelButtonText: 'Cancel',
+                 imageUrl: null,
+                 imageSize: null,
+                 timer: null,
+                 customClass: '',
+                 html: false,
+                 animation: true,
+                 allowEscapeKey: true,
+                 inputType: 'text',
+                 inputPlaceholder: '',
+                 inputValue: '',
+                 showLoaderOnConfirm: false
+       		  });
+		</script>
+		<c:remove var="alertMsg" scope="session" /> <!-- 일회성 메시지의 역할을 하기 위해 지워주기 -->
+		<c:remove var="alertTitle" scope="session" />
+	</c:if>
 
 <!-- ======= Footer ======= -->
   <footer id="footer">
