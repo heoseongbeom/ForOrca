@@ -1,5 +1,8 @@
 package com.orca.kim.about.model.service;
 
-public class AboutServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class AboutServiceImpl implements AboutService{
 
 }
