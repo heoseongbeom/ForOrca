@@ -10,6 +10,7 @@
 		<!-- <typeAlias type="com.finalProject.eduWorks.board.model.vo.Board" alias="Board" /> -->
 		<typeAlias type="com.orca.kim.member.model.vo.Member" alias="Member" />
 		<typeAlias type="com.orca.kim.member.model.vo.MainPage" alias="MainPage" />
+		<typeAlias type="com.orca.kim.about.model.vo.About" alias="About" />
 	</typeAliases>
 	<!-- 유의사항 : 미리등록해두려면 해당 클래스가 진짜 존재해야 함 -->
 	
@@ -22,6 +23,7 @@
 		<!-- 	<mapper resource="/mappers/notice-mapper.xml" /> -->
 	 	<mapper resource="/mappers/member-mapper.xml" />
 		<mapper resource="/mappers/main-mapper.xml" />
+		<mapper resource="/mappers/about-mapper.xml" />
 	 </mappers>
 	 <!-- 유의사항 : 미리등록해두려면 해당 mapper 파일이 진짜 존재해야 함 (뿐만 아니라 namespace까지도 지정되어있어야 함) -->
 	
