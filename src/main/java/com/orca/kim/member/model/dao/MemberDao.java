@@ -23,5 +23,10 @@ public class MemberDao {
 	public MainPage selectMain(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("mainMapper.selectMain");
 	}
+	
+	// 메인 페이지 update
+	public int updateMain(SqlSessionTemplate sqlSession, MainPage mp) {
+		return sqlSession.update("mainMapper.updateMain", mp);
+	}
 
 }
