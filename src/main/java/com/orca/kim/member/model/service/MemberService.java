@@ -13,4 +13,7 @@ public interface MemberService {
 	
 	// 메인 페이지 select
 	MainPage selectMain();
+	
+	// 메인 페이지 update
+	int updateMain(MainPage mp);
 }
