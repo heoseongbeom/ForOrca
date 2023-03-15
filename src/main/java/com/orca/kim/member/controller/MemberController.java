@@ -1,12 +1,17 @@
 package com.orca.kim.member.controller;
 
+import java.io.File;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.orca.kim.common.template.FileUpload;
 import com.orca.kim.member.model.service.MemberService;
 import com.orca.kim.member.model.vo.MainPage;
 import com.orca.kim.member.model.vo.Member;
@@ -66,10 +71,53 @@ public class MemberController {
 		}
 		
 		// 관리자 메인페이지 수정페이지 접속
-		@RequestMapping("mainUpdate.me")
-		public String adminMember() {
-			return "mainUpdate";
+		@RequestMapping("mainUpdateForm.me")
+		public ModelAndView adminMember(ModelAndView mv) {
+			MainPage mp = mService.selectMain();
+			mv.addObject("mp", mp).setViewName("mainUpdate");
+			return mv;
 			
+		}
+		
+		// 메인 페이지 수정 후 호울 메소드
+		@RequestMapping("mainPage.me")
+		public ModelAndView updateMainPage(ModelAndView mv) {
+			MainPage mp = mService.selectMain();
+			mv.addObject("mp", mp).setViewName("main");
+			return mv;
+		}
+		
+		// 메인페이지 수정 기능
+		@RequestMapping("updateMain.me")
+		public String updateMain(MainPage mp, MultipartFile upfile, HttpSession session, Model model) {
+			System.out.println(mp);
+			// 새로 넘어온 첨부파일이 있을 경우
+			if(!upfile.getOriginalFilename().equals("")) {
+				
+				// 기존에 첨부파일이 있었을 경우
+				if(mp.getMainPhotoOrigin() != null) { // 기존의 첨부파일 지우기
+					new File( session.getServletContext().getRealPath(mp.getMainPhotoChange()) ).delete();
+				}
+				
+				// 새로 넘어온 첨부파일을 서버 업로드 시키기
+				String saveFilePath = FileUpload.saveFile(upfile, session, "resources/uploadFiles/");
+				mp.setMainPhotoOrigin(upfile.getOriginalFilename());
+				mp.setMainPhotoChange(saveFilePath);
+			}
+			
+			
+			System.out.println(mp);
+
+			int result = mService.updateMain(mp);
+			System.out.println(result);
+			if(result > 0) {
+				session.setAttribute("alertTitle", "수정 완료");
+				session.setAttribute("alertMsg", "Update Complete");
+				return "redirect:mainPage.me";
+			}else {
+				session.setAttribute("alertMsg", "Update Fail");
+				return "redirect/";
+			}
 		}
 
 
