@@ -1,5 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="">
-
+<mapper namespace="aboutMapper">
+	
+	<resultMap id="aboutResult" type="About">
+		<result column="about_no" property="aboutNo" />
+		<result column="about_intro_one" property="aboutIntroOne" />
+		<result column="about_tattooist" property="aboutTattooist" />
+		<result column="about_birthday" property="aboutBirthday" />
+		<result column="about_website" property="aboutWebsite" />
+		<result column="about_phone" property="aboutPhone" />
+		<result column="about_city" property="aboutCity" />
+		<result column="about_age" property="aboutAge" />
+		<result column="about_degree" property="aboutDegree" />
+		<result column="about_email" property="aboutEmail" />
+		<result column="about_freelance" property="aboutFreelance" />
+		<result column="about_intro_two" property="aboutIntroTwo" />
+		<result column="about_skills" property="aboutSkills" />
+		<result column="about_skills_one" property="aboutSkillsOne" />
+		<result column="about_skills_one_per" property="aboutSkillsOnePer" />
+		<result column="about_skills_two" property="aboutSkillsTwo" />
+		<result column="about_skills_two_per" property="aboutSkillsTwoPer" />
+		<result column="about_skills_three" property="aboutSkillsThree" />
+		<result column="about_skills_three_per" property="aboutSkillsThreePer" />
+		<result column="about_skills_four" property="aboutSkillsFour" />
+		<result column="about_skills_four_per" property="aboutSkillsFourPer" />
+		<result column="about_skills_five" property="aboutSkillsFive" />
+		<result column="about_skills_five_per" property="aboutSkillsFivePer" />
+		<result column="about_skills_six" property="aboutSkillsSix" />
+		<result column="about_skills_six_per" property="aboutSkillsSixPer" />
+		<result column="about_facts" property="aboutFacts" />
+		<result column="about_facts_one" property="aboutFactsOne" />
+		<result column="about_facts_one_text" property="aboutFactsOneText" />
+		<result column="about_facts_two" property="aboutFactsTwo" />
+		<result column="about_facts_two_text" property="aboutFactsTwoText" />
+		<result column="about_facts_three" property="aboutFactsThree" />
+		<result column="about_facts_three_text" property="aboutFactsThreeText" />
+		<result column="about_facts_four" property="aboutFactsFour" />
+		<result column="about_facts_four_text" property="aboutFactsFourText" />
+		<result column="about_story" property="aboutStory" />
+		<result column="about_st_one_text1" property="aboutStOneText1" />
+		<result column="about_st_one_text2" property="aboutStOneText2" />
+		<result column="about_st_one_text3" property="aboutStOneText3" />
+		<result column="about_st_two_text1" property="aboutStTwoText1" />
+		<result column="about_st_two_text2" property="aboutStTwoText2" />
+		<result column="about_st_two_text3" property="aboutStTwoText3" />
+		<result column="about_st_three_text1" property="aboutStThreeText1" />
+		<result column="about_st_three_text2" property="aboutStThreeText2" />
+		<result column="about_st_three_text3" property="aboutStThreeText3" />
+		<result column="about_st_four_text1" property="aboutStFourText1" />
+		<result column="about_st_four_text2" property="aboutStFourText2" />
+		<result column="about_st_four_text3" property="aboutStFourText3" />
+		<result column="about_st_five_text1" property="aboutStFiveText1" />
+		<result column="about_st_five_text2" property="aboutStFiveText2" />
+		<result column="about_st_five_text3" property="aboutStFiveText3" />
+		<result column="about_profile_img" property="aboutProfileImg" />
+		<result column="about_story_img1" property="aboutStoryImg1" />
+		<result column="about_story_img2" property="aboutStoryImg2" />
+		<result column="about_story_img3" property="aboutStoryImg3" />
+		<result column="about_story_img4" property="aboutStoryImg4" />
+		<result column="about_story_img5" property="aboutStoryImg5" />
+	</resultMap>
+	
+	<select id="selectAbout" resultMap="aboutResult">
+		select
+				about_no
+		      , about_intro_one
+			  , about_tattooist
+			  , about_birthday
+			  , about_website
+			  , about_phone
+			  , about_city
+			  , about_age
+			  , about_degree
+			  , about_email
+			  , about_freelance
+			  , about_intro_two
+			  , about_skills
+			  , about_skills_one
+			  , about_skills_one_per
+			  , about_skills_two
+			  , about_skills_two_per
+			  , about_skills_three
+			  , about_skills_three_per
+			  , about_skills_four
+			  , about_skills_four_per
+			  , about_skills_five
+			  , about_skills_five_per
+			  , about_skills_six
+			  , about_skills_six_per
+			  , about_facts
+			  , about_facts_one
+			  , about_facts_one_text
+		      , about_facts_two
+			  , about_facts_two_text
+			  , about_facts_three
+			  , about_facts_three_text
+			  , about_facts_four
+			  , about_facts_four_text
+			  , about_story
+			  , about_st_one_text1
+			  , about_st_one_text2
+			  , about_st_one_text3
+			  , about_st_two_text1
+			  , about_st_two_text2
+			  , about_st_two_text3
+			  , about_st_three_text1
+			  , about_st_three_text2
+			  , about_st_three_text3
+			  , about_st_four_text1
+			  , about_st_four_text2
+			  , about_st_four_text3
+			  , about_st_five_text1
+			  , about_st_five_text2
+			  , about_st_five_text3
+			  , about_profile_img
+			  , about_story_img1
+			  , about_story_img2
+			  , about_story_img3
+			  , about_story_img4
+			  , about_story_img5
+		  from about
+	</select>
 </mapper>
