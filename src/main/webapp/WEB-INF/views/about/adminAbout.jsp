@@ -91,7 +91,7 @@
 	                <ul>
 	                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 26</li>
 	                  <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Master</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>PhEmailone:</strong> ericarica@gmail.com</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> ericarica@gmail.com</li>
 	                  <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li>
 	                </ul>
 	              </div>
