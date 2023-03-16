@@ -60,7 +60,7 @@
 <body>
 <form action="updateMain.me" enctype="multipart/form-data" method="post">
 	<!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+  <header id="header" class="fixed-top" style="padding: 10px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <h1 class="logo me-auto me-lg-0" style="display:flex;"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">${ mp.mainAdminName }</h1>
