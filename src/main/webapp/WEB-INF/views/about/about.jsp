@@ -66,44 +66,40 @@
 	
 	        <div class="section-title">
 	          <h2>About</h2>
-	          <p>I was born in Korea and came to Canada through the Philippines.
-				This is Orca, the tattooist.</p>
+	          <p>
+	          	${ a.aboutIntroOne }
+			  </p>
 	        </div>
 	
 	        <div class="row">
 	          <div class="col-lg-4">
-	            <img src="${pageContext.request.contextPath}/resources/img/profile.jpg" class="img-fluid" alt="">
+	            <img src="${ a.aboutProfileImg }" class="img-fluid" alt="">
 	          </div>
 	          <div class="col-lg-8 pt-4 pt-lg-0 content">
 	            <h3>Tattooist</h3>
 	            <p class="fst-italic">
-					I am a tattooist who works on the best art between Korea and Canada. Reservations and inquiries are available through Instagram. Thank you.
+					${ a.aboutTattooist }
 	            </p>
 	            <div class="row">
 	              <div class="col-lg-6">
 	                <ul>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> 16 January 1997</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Website:</strong> www.orca.com</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> 010 4435 0116</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> Vancouver, CANADA | Gimpo, KOREA</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> ${ a.aboutBirthday }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Website:</strong> ${ a.aboutWebsite }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> ${ a.aboutPhone }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> ${ a.aboutCity }</li>
 	                </ul>
 	              </div>
 	              <div class="col-lg-6">
 	                <ul>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 26</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Master</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>PhEmailone:</strong> ericarica@gmail.com</li>
-	                  <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> ${ a.aboutAge }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> ${ a.aboutDegree }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>PhEmailone:</strong> ${ a.aboutEmail }</li>
+	                  <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> ${ a.aboutFreelance }</li>
 	                </ul>
 	              </div>
 	            </div>
 	            <p>
-					On July 17, 2022, I first met in Izakaya, became curious, became interested in the second meeting, and love began to sprout at the third meeting.
-					And now I'm a person who can't live without you.
-					I have loved you so far and I will continue to love you. Happy birthday my love.
-					Thank you for being born into this world.
-					
-					
+					${ a.aboutIntroTwo }
 	            </p>
 	          </div>
 	        </div>
@@ -117,7 +113,7 @@
 	
 	        <div class="section-title">
 	          <h2>Skills</h2>
-	          <p>It is a technical score that expresses tattoo skills in numbers.</p>
+	          <p>${ a.aboutSkills }</p>
 	        </div>
 	
 	        <div class="row skills-content">
@@ -125,23 +121,23 @@
 	          <div class="col-lg-6">
 	
 	            <div class="progress">
-	              <span class="skill">handling <i class="val">100%</i></span>
+	              <span class="skill">${ a.aboutSkillsOne } <i class="val">${ a.aboutSkillsOnePer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsOnePer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
 	            <div class="progress">
-	              <span class="skill">color <i class="val">100%</i></span>
+	              <span class="skill">${ a.aboutSkillsTwo } <i class="val">${ a.aboutSkillsTwoPer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsTwoPer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
 	            <div class="progress">
-	              <span class="skill">line <i class="val">100%</i></span>
+	              <span class="skill">${ a.aboutSkillsThree } <i class="val">${ a.aboutSkillsThreePer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsThreePer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
@@ -150,23 +146,23 @@
 	          <div class="col-lg-6">
 	
 	            <div class="progress">
-	              <span class="skill">beauty <i class="val">180%</i></span>
+	              <span class="skill">${ a.aboutSkillsFour } <i class="val">${ a.aboutSkillsFourPer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsFourPer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
 	            <div class="progress">
-	              <span class="skill">cuty <i class="val">200%</i></span>
+	              <span class="skill">${ a.aboutSkillsFive } <i class="val">${ a.aboutSkillsFivePer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsFivePer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
 	            <div class="progress">
-	              <span class="skill">sexy <i class="val">150%</i></span>
+	              <span class="skill">${ a.aboutSkillsSix } <i class="val">${ a.aboutSkillsSixPer }%</i></span>
 	              <div class="progress-bar-wrap">
-	                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+	                <div class="progress-bar" role="progressbar" aria-valuenow="${ a.aboutSkillsSixPer }" aria-valuemin="0" aria-valuemax="100"></div>
 	              </div>
 	            </div>
 	
@@ -183,29 +179,29 @@
 	
 	        <div class="section-title">
 	          <h2>Facts</h2>
-	          <p>It's nothing special, but it's a birthday present I made myself.</p>
+	          <p>${ a.aboutFacts }</p>
 	        </div>
 	
 	        <div class="row counters">
 	
 	          <div class="col-lg-3 col-6 text-center">
-	            <span data-purecounter-start="0" data-purecounter-end="0116" data-purecounter-duration="1" class="purecounter"></span>
-	            <p>I love you</p>
+	            <span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsOne }" data-purecounter-duration="1" class="purecounter"></span>
+	            <p>${ a.aboutFactsOneText }</p>
 	          </div>
 	
 	          <div class="col-lg-3 col-6 text-center">
-	            <span data-purecounter-start="0" data-purecounter-end="0824" data-purecounter-duration="1" class="purecounter"></span>
-	            <p>so much</p>
+	            <span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsTwo }" data-purecounter-duration="1" class="purecounter"></span>
+	            <p>${ a.aboutFactsTwoText }</p>
 	          </div>
 	
 	          <div class="col-lg-3 col-6 text-center">
-	            <span data-purecounter-start="0" data-purecounter-end="0719" data-purecounter-duration="1" class="purecounter"></span>
-	            <p>my princess</p>
+	            <span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsThree }" data-purecounter-duration="1" class="purecounter"></span>
+	            <p>${ a.aboutFactsThreeText }</p>
 	          </div>
 	
 	          <div class="col-lg-3 col-6 text-center">
-	            <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
-	            <p>and my world</p>
+	            <span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsFour }" data-purecounter-duration="1" class="purecounter"></span>
+	            <p>${ a.aboutFactsFourText }</p>
 	          </div>
 	
 	        </div>
@@ -219,7 +215,7 @@
 	
 	        <div class="section-title">
 	          <h2>Story</h2>
-	          <p>We met in July 2022 and until 2023, and we continue to love...</p>
+	          <p>${ a.aboutStory }</p>
 	        </div>
 	
 	        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -227,12 +223,12 @@
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${pageContext.request.contextPath}/resources/img/hahaha (1).jpg" class="testimonial-img" alt="">
-	                <h3>Loopy Orca</h3>
-	                <h4>Cuty</h4>
+	                <img src="${ a.aboutStoryImg1 }" class="testimonial-img" alt="">
+	                <h3>${ a.aboutStOneText1 }</h3>
+	                <h4>${ a.aboutStOneText2 }</h4>
 	                <p>
 	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  My love who makes me laugh at the cafe.
+	                  ${ a.aboutStOneText3 }	
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
@@ -240,25 +236,12 @@
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${pageContext.request.contextPath}/resources/img/hahaha (2).jpg" class="testimonial-img" alt="">
-	                <h3>Surprised Orca</h3>
-	                <h4>Food fighter</h4>
+	                <img src="${ a.aboutStoryImg2 }" class="testimonial-img" alt="">
+	                <h3>${ a.aboutStTwoText1 }</h3>
+	                <h4>${ a.aboutStTwoText2 }</h4>
 	                <p>
 	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  My love who was surprised to see cold Mul-Hoi in Yeongjongdo Island.
-	                  <i class="${pageContext.request.contextPath}/resources/img/hahaha (1).jpg"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item -->
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${pageContext.request.contextPath}/resources/img/hahaha (3).jpg" class="testimonial-img" alt="">
-	                <h3>Sulky Orca</h3>
-	                <h4>Sexy</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  My love staring at me in a sulky way
+	                  ${ a.aboutStTwoText3 }
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
@@ -266,12 +249,12 @@
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${pageContext.request.contextPath}/resources/img/hahaha (4).jpg" class="testimonial-img" alt="">
-	                <h3>Focused Orca</h3>
-	                <h4>Cool</h4>
+	                <img src="${ a.aboutStoryImg3 }" class="testimonial-img" alt="">
+	                <h3>${ a.aboutStThreeText1 }</h3>
+	                <h4>${ a.aboutStThreeText2 }</h4>
 	                <p>
 	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  My love posing for the best picture
+	                  ${ a.aboutStThreeText3 }
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
@@ -279,12 +262,25 @@
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${pageContext.request.contextPath}/resources/img/hahaha (5).jpg" class="testimonial-img" alt="">
-	                <h3>Smilling Orca</h3>
-	                <h4>Beauty</h4>
+	                <img src="${ a.aboutStoryImg4 }" class="testimonial-img" alt="">
+	                <h3>${ a.aboutStFourText1 }</h3>
+	                <h4>${ a.aboutStFourText2 }</h4>
 	                <p>
 	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  The world's prettiest love that gives me a pretty smile
+	                  ${ a.aboutStFourText3 }
+	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+	                </p>
+	              </div>
+	            </div><!-- End testimonial item -->
+	
+	            <div class="swiper-slide">
+	              <div class="testimonial-item">
+	                <img src="${ a.aboutStoryImg5 }" class="testimonial-img" alt="">
+	                <h3>${ a.aboutStFiveText1 }</h3>
+	                <h4>${ a.aboutStFiveText2 }</h4>
+	                <p>
+	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+	                  ${ a.aboutStFiveText3 }
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
