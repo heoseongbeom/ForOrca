@@ -53,12 +53,18 @@
 		<result column="about_st_five_text1" property="aboutStFiveText1" />
 		<result column="about_st_five_text2" property="aboutStFiveText2" />
 		<result column="about_st_five_text3" property="aboutStFiveText3" />
-		<result column="about_profile_img" property="aboutProfileImg" />
-		<result column="about_story_img1" property="aboutStoryImg1" />
-		<result column="about_story_img2" property="aboutStoryImg2" />
-		<result column="about_story_img3" property="aboutStoryImg3" />
-		<result column="about_story_img4" property="aboutStoryImg4" />
-		<result column="about_story_img5" property="aboutStoryImg5" />
+		<result column="about_profile_origin_img" property="aboutProfileOriginImg" />
+		<result column="about_profile_change_img" property="aboutProfileChangeImg" />
+		<result column="about_story_origin_img1" property="aboutStoryOriginImg1" />
+		<result column="about_story_change_img1" property="aboutStoryChangeImg1" />
+		<result column="about_story_origin_img2" property="aboutStoryOriginImg2" />
+		<result column="about_story_change_img2" property="aboutStoryChangeImg2" />
+		<result column="about_story_origin_img3" property="aboutStoryOriginImg3" />
+		<result column="about_story_change_img3" property="aboutStoryChangeImg3" />
+		<result column="about_story_origin_img4" property="aboutStoryOriginImg4" />
+		<result column="about_story_change_img4" property="aboutStoryChangeImg4" />
+		<result column="about_story_origin_img5" property="aboutStoryOriginImg5" />
+		<result column="about_story_change_img5" property="aboutStoryChangeImg5" />
 	</resultMap>
 	
 	<select id="selectAbout" resultMap="aboutResult">
@@ -113,12 +119,18 @@
 			  , about_st_five_text1
 			  , about_st_five_text2
 			  , about_st_five_text3
-			  , about_profile_img
-			  , about_story_img1
-			  , about_story_img2
-			  , about_story_img3
-			  , about_story_img4
-			  , about_story_img5
+			  , about_profile_origin_img
+			  , about_profile_change_img
+			  , about_story_origin_img1
+			  , about_story_change_img1
+			  , about_story_origin_img2
+			  , about_story_change_img2
+			  , about_story_origin_img3
+			  , about_story_change_img3
+			  , about_story_origin_img4
+			  , about_story_change_img4
+			  , about_story_origin_img5
+			  , about_story_change_img5
 		  from about
 	</select>
 </mapper>
