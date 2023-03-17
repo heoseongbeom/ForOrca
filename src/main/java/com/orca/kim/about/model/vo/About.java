@@ -63,12 +63,18 @@ public class About {
 	private String aboutStFiveText1;
 	private String aboutStFiveText2;
 	private String aboutStFiveText3;
-	private String aboutProfileImg;
-	private String aboutStoryImg1;
-	private String aboutStoryImg2;
-	private String aboutStoryImg3;
-	private String aboutStoryImg4;
-	private String aboutStoryImg5;
+	private String aboutProfileOriginImg;
+	private String aboutProfileChangeImg;
+	private String aboutStoryOriginImg1;
+	private String aboutStoryChangeImg1;
+	private String aboutStoryOriginImg2;
+	private String aboutStoryChangeImg2;
+	private String aboutStoryOriginImg3;
+	private String aboutStoryChangeImg3;
+	private String aboutStoryOriginImg4;
+	private String aboutStoryChangeImg4;
+	private String aboutStoryOriginImg5;
+	private String aboutStoryChangeImg5;
 	
 
 }
