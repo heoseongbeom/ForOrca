@@ -6,5 +6,8 @@ public interface AboutService {
 	
 	// about, aboutUpdate 페이지 select 구문
 	About selectAbout();
+	
+	// about 페이지 update구문
+	int updateAbout(About a);
 
 }
