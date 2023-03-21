@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=maven,java,eclipse
 
 ### Eclipse ###
+*.jpg
 .metadata
 bin/
 tmp/
@@ -116,4 +117,5 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,eclipse
 /build/
+*.jpg
 *.jpg
