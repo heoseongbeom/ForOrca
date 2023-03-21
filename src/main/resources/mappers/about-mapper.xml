@@ -133,4 +133,71 @@
 			  , about_story_change_img5
 		  from about
 	</select>
+	
+	<update id="updateAbout">
+		update
+			   about
+		   set about_intro_one = #{aboutIntroOne}
+			 , about_tattooist = #{aboutTattooist} 
+			 , about_birthday = #{aboutBirthday}
+			 , about_website = #{aboutWebsite}
+			 , about_phone = #{aboutPhone}
+			 , about_city = #{aboutCity}
+			 , about_age = #{aboutAge}
+			 , about_degree = #{aboutDegree}
+			 , about_email = #{aboutEmail}
+			 , about_freelance = #{aboutFreelance}
+			 , about_intro_two = #{aboutIntroTwo}
+			 , about_skills = #{aboutSkills}
+			 , about_skills_one = #{aboutSkillsOne}
+			 , about_skills_one_per = #{aboutSkillsOnePer}
+			 , about_skills_two = #{aboutSkillsTwo}
+			 , about_skills_two_per = #{aboutSkillsTwoPer}
+			 , about_skills_three = #{aboutSkillsThree}
+			 , about_skills_three_per = #{aboutSkillsThreePer}
+			 , about_skills_four = #{aboutSkillsFour}
+			 , about_skills_four_per = #{aboutSkillsFourPer}
+			 , about_skills_five = #{aboutSkillsFive}
+			 , about_skills_five_per = #{aboutSkillsFivePer}
+			 , about_skills_six = #{aboutSkillsSix}
+			 , about_skills_six_per = #{aboutSkillsSixPer}
+			 , about_facts = #{aboutFacts}
+			 , about_facts_one = #{aboutFactsOne}
+			 , about_facts_one_text = #{aboutFactsOneText}
+		     , about_facts_two = #{aboutFactsTwo}
+			 , about_facts_two_text = #{aboutFactsTwoText}
+			 , about_facts_three = #{aboutFactsThree}
+			 , about_facts_three_text = #{aboutFactsThreeText}
+			 , about_facts_four = #{aboutFactsFour}
+			 , about_facts_four_text = #{aboutFactsFourText}
+			 , about_story = #{aboutStory}
+			 , about_st_one_text1 = #{aboutStOneText1}
+			 , about_st_one_text2 = #{aboutStOneText2}
+			 , about_st_one_text3 = #{aboutStOneText3}
+			 , about_st_two_text1 = #{aboutStTwoText1}
+			 , about_st_two_text2 = #{aboutStTwoText2}
+			 , about_st_two_text3 = #{aboutStTwoText3}
+			 , about_st_three_text1 = #{aboutStThreeText1}
+			 , about_st_three_text2 = #{aboutStThreeText2}
+			 , about_st_three_text3 = #{aboutStThreeText3}
+			 , about_st_four_text1 = #{aboutStFourText1}
+			 , about_st_four_text2 = #{aboutStFourText2}
+			 , about_st_four_text3 = #{aboutStFourText3}
+			 , about_st_five_text1 = #{aboutStFiveText1}
+			 , about_st_five_text2 = #{aboutStFiveText2}
+			 , about_st_five_text3 = #{aboutStFiveText3}
+			 , about_profile_origin_img = #{aboutProfileOriginImg}
+			 , about_profile_change_img = #{aboutProfileChangeImg}
+			 , about_story_origin_img1 = #{aboutStoryOriginImg1}
+			 , about_story_change_img1 = #{aboutStoryChangeImg1}
+			 , about_story_origin_img2 = #{aboutStoryOriginImg2}
+			 , about_story_change_img2 = #{aboutStoryChangeImg2}
+			 , about_story_origin_img3 = #{aboutStoryOriginImg3}
+			 , about_story_change_img3 = #{aboutStoryChangeImg3}
+			 , about_story_origin_img4 = #{aboutStoryOriginImg4}
+			 , about_story_change_img4 = #{aboutStoryChangeImg4}
+			 , about_story_origin_img5 = #{aboutStoryOriginImg5}
+			 , about_story_change_img5 = #{aboutStoryChangeImg5}
+	     where about_no = 1
+	</update>
 </mapper>
