@@ -21,5 +21,11 @@ public class AboutServiceImpl implements AboutService{
 	public About selectAbout() {
 		return aDao.selectAbout(sqlSession);
 	}
+	
+	// about 페이지 update 구문
+	@Override
+	public int updateAbout(About a) {
+		return aDao.updateAbout(a, sqlSession);
+	}
 
 }
