@@ -12,5 +12,10 @@ public class AboutDao {
 	public About selectAbout(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("aboutMapper.selectAbout");
 	}
+	
+	// about 페이지 update 구문
+	public int updateAbout(About a, SqlSessionTemplate sqlSession) {
+		return sqlSession.update("aboutMapper.updateAbout", a);
+	}
 
 }
