@@ -73,7 +73,7 @@
 	
 	        <div class="row">
 	          <div class="col-lg-4">
-	            <img src="${ a.aboutProfileImg }" class="img-fluid" alt="">
+	            <img src="${ a.aboutProfileChangeImg }" class="img-fluid" alt="">
 	          </div>
 	          <div class="col-lg-8 pt-4 pt-lg-0 content">
 	            <h3>Tattooist</h3>
@@ -210,6 +210,7 @@
 	    </section><!-- End Facts Section -->
 	
 	    <!-- ======= Testimonials Section ======= -->
+	    <!--  
 	    <section id="testimonials" class="testimonials">
 	      <div class="container" data-aos="fade-up">
 	
@@ -223,7 +224,7 @@
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryImg1 }" class="testimonial-img" alt="">
+	                <img src="${ a.aboutStoryChangeImg1 }" class="testimonial-img" alt="">
 	                <h3>${ a.aboutStOneText1 }</h3>
 	                <h4>${ a.aboutStOneText2 }</h4>
 	                <p>
@@ -232,11 +233,11 @@
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
-	            </div><!-- End testimonial item -->
+	            </div><!-- End testimonial item 
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryImg2 }" class="testimonial-img" alt="">
+	                <img src="${ a.aboutStoryChangeImg2 }" class="testimonial-img" alt="">
 	                <h3>${ a.aboutStTwoText1 }</h3>
 	                <h4>${ a.aboutStTwoText2 }</h4>
 	                <p>
@@ -245,11 +246,11 @@
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
-	            </div><!-- End testimonial item -->
+	            </div><!-- End testimonial item 
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryImg3 }" class="testimonial-img" alt="">
+	                <img src="${ a.aboutStoryChangeImg3 }" class="testimonial-img" alt="">
 	                <h3>${ a.aboutStThreeText1 }</h3>
 	                <h4>${ a.aboutStThreeText2 }</h4>
 	                <p>
@@ -258,11 +259,11 @@
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
-	            </div><!-- End testimonial item -->
+	            </div><!-- End testimonial item 
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryImg4 }" class="testimonial-img" alt="">
+	                <img src="${ a.aboutStoryChangeImg4 }" class="testimonial-img" alt="">
 	                <h3>${ a.aboutStFourText1 }</h3>
 	                <h4>${ a.aboutStFourText2 }</h4>
 	                <p>
@@ -271,11 +272,11 @@
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
-	            </div><!-- End testimonial item -->
+	            </div><!-- End testimonial item 
 	
 	            <div class="swiper-slide">
 	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryImg5 }" class="testimonial-img" alt="">
+	                <img src="${ a.aboutStoryChangeImg5 }" class="testimonial-img" alt="">
 	                <h3>${ a.aboutStFiveText1 }</h3>
 	                <h4>${ a.aboutStFiveText2 }</h4>
 	                <p>
@@ -284,14 +285,15 @@
 	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 	                </p>
 	              </div>
-	            </div><!-- End testimonial item -->
+	            </div><!-- End testimonial item 
 	
 	          </div>
 	          <div class="swiper-pagination"></div>
 	        </div>
 	
 	      </div>
-	    </section><!-- End Testimonials Section -->
+	    </section> 
+	     End Testimonials Section -->
 	
 	  </main><!-- End #main -->
 	
