@@ -101,7 +101,7 @@
       <h2><input type="text" name="mainAdminIntro" value="${ mp.mainAdminIntro }" class="form-control" style="width:700px"></h2>
       <!--  <a href="about.me" class="btn-about">About Me</a>-->
       <br><br><br><br><br>
-      <input type="file" class="form-control" name="upfile" style="color:white; width: 300px;">
+      <input type="file" class="form-control" name="upfile" style="width: 300px;">
     </div>
   </section><!-- End Hero -->
 
