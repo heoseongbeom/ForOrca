@@ -28,5 +28,10 @@ public class MemberDao {
 	public int updateMain(SqlSessionTemplate sqlSession, MainPage mp) {
 		return sqlSession.update("mainMapper.updateMain", mp);
 	}
+	
+	// 이메일 중복 확인
+	public int confirmEmail(SqlSessionTemplate sqlSession, String email) {
+		return sqlSession.selectOne("memberMapper.confirmEmail", email);
+	}
 
 }
