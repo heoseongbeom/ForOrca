@@ -51,6 +51,12 @@
 		  )
 	</insert>
 
+	<select id="confirmEmail" resultType="_int">
+		select
+			   count(*)
+	      from member
+	     where mem_email = #{email}
+	</select>
 
 
 
