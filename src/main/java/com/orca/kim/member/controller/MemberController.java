@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.orca.kim.common.template.FileUpload;
 import com.orca.kim.member.model.service.MemberService;
 import com.orca.kim.member.model.vo.MainPage;
@@ -54,6 +56,8 @@ public class MemberController {
 		public ModelAndView signupMember(Member m, HttpSession session, ModelAndView mv) {
 			
 			int result = mService.signupMember(m);
+			
+			//Member rm = mService.loginMember();
 			
 			if(result > 0) {
 				session.setAttribute("alertTitle", "회원가입 성공");
@@ -118,6 +122,20 @@ public class MemberController {
 				session.setAttribute("alertMsg", "Update Fail");
 				return "redirect/";
 			}
+		}
+		
+		// 이메일 중복 확인
+		@ResponseBody
+		@RequestMapping(value="confirmEmail.me", produces="application/json; charset=UTF-8")
+		public String confirmEmail(String email) {
+			int result = mService.confirmEmail(email);
+			System.out.println(result);
+			return new Gson().toJson(result);
+		}
+		
+		@RequestMapping("findEmailPwdForm.me")
+		public String findEmailPwdForm() {
+			return "findEmailPwd";
 		}
 
 
