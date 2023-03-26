@@ -40,5 +40,11 @@ public class MemberSercviceImpl implements MemberService{
 	public int updateMain(MainPage mp) {
 		return mDao.updateMain(sqlSession, mp);
 	}
+	
+	// 이메일 중복 확인
+	@Override
+	public int confirmEmail(String email) {
+		return mDao.confirmEmail(sqlSession, email);
+	}
 
 }
