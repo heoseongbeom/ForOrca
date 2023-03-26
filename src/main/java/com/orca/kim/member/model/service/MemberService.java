@@ -16,4 +16,7 @@ public interface MemberService {
 	
 	// 메인 페이지 update
 	int updateMain(MainPage mp);
+	
+	// 이메일 중복 확인
+	int confirmEmail(String email);
 }
