@@ -270,7 +270,7 @@ body.swal2-height-auto{
 
 <body>
 
-  <c:if test="${ not empty alertMsg }">
+  	<c:if test="${ not empty alertMsg }">
 		<script>
              Swal.fire({
                  title: "${alertTitle}",
@@ -295,7 +295,9 @@ body.swal2-height-auto{
                  inputValue: '',
                  showLoaderOnConfirm: false
        		  });
+			  
 		</script>
+		<c:remove var="alertTitle" scope="session" />
 		<c:remove var="alertMsg" scope="session" /> <!-- 일회성 메시지의 역할을 하기 위해 지워주기 -->
 	</c:if>
   <div class="container ">
@@ -334,32 +336,6 @@ body.swal2-height-auto{
     </div>
   </div>
 
-<script language="javascript">
-  var emailInput;
-
-$("#email-input").on("change", function() {
-  emailInput = $(this).val();
-
-  if (validateEmail(emailInput)) {
-    $(this).css({
-      color: "white",
-      background: "green",
-      border: "1px solid green"
-    });
-  } else {
-    $(this).css({
-      color: "red",
-      border: "1px solid red"
-    });
-
-    // alert("not a valid email address");
-  }
-});
-
-
-
-
-</script>
 
 <script>
 const findEmailBtn = document.getElementById("FindEmail");
@@ -377,22 +353,6 @@ findPwdBtn.addEventListener("click", () => {
 });
 
 
-</script>
-
-
-<script>
-  $('#userEmail').on("propertychange change keyup paste input", function(){
-
-    var email = $('#userEmail').val();
-    var regex = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
-    console.log(regex.test(email));
-    if(regex.test(email) == false){
-      $('.emailInput').css('display', 'block');
-    }else{
-      $('.emailInput').css('display', 'none');
-    }
-    
-  });
 </script>
 
 </body>
