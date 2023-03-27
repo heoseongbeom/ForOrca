@@ -35,16 +35,30 @@ public class MemberSercviceImpl implements MemberService{
 		return mDao.selectMain(sqlSession);
 	}
 	
+	// 이메일 중복 확인
+	@Override
+	public int confirmEmail(String email) {
+		return mDao.confirmEmail(sqlSession, email);
+	}
+	
+	// 이메일 찾기
+	@Override
+	public Member selectEmail(Member m) {
+		return mDao.selectEmail(sqlSession, m);
+	}
+	
+	// 비밀버호 찾기
+	@Override
+	public Member selectPwd(Member m) {
+		return mDao.selectPwd(sqlSession, m);
+	}
+	
 	// 메인 페이지 update
 	@Override
 	public int updateMain(MainPage mp) {
 		return mDao.updateMain(sqlSession, mp);
 	}
 	
-	// 이메일 중복 확인
-	@Override
-	public int confirmEmail(String email) {
-		return mDao.confirmEmail(sqlSession, email);
-	}
+	
 
 }
