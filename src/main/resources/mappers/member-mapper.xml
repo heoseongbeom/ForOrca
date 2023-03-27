@@ -12,7 +12,7 @@
 	  	<result column="mem_state" property="memState" />
 	</resultMap>
 	
-	
+	<!-- 로그인 기능 -->
 	<select id="loginMember" resultMap="memberResult">
 		select
 		       mem_no
@@ -27,6 +27,7 @@
 		   and mem_pwd = #{memPwd}
 	</select>
 	
+	<!-- 회원가입 기능 -->
 	<insert id="signupMember">
 		insert
 		  into member
@@ -51,16 +52,32 @@
 		  )
 	</insert>
 
+	<!-- 이메일 중복 확인 기능 -->
 	<select id="confirmEmail" resultType="_int">
 		select
 			   count(*)
 	      from member
 	     where mem_email = #{email}
 	</select>
+	
+	<!-- 이메일 찾기 기능 -->
+	<select id="selectEmail" resultMap="memberResult">
+		select 
+		       mem_email
+		  from member
+		 where mem_name = #{memName}
+		   and mem_instar_id = #{memInstarId}
+	</select>
 
-
-
-
+	<!-- 비밀번호 찾기 -->
+	<select id="selectPwd" resultMap="memberResult">
+		select
+		       mem_pwd
+		  from member
+		 where mem_email = #{memEmail}
+		   and mem_name = #{memName}
+		   and mem_instar_id = #{memInstarId}
+	</select>
 
 
 
