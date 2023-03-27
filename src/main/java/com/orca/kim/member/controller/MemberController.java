@@ -152,7 +152,7 @@ public class MemberController {
 			if(result != null) {
 				session.setAttribute("alertTitle", "Email");
 				session.setAttribute("alertMsg", result.getMemEmail());
-				return "member/login";
+				return "redirect:/";
 			}else {
 				session.setAttribute("alertTitle", "Email");
 				session.setAttribute("alertMsg", "입력하신 정보에 맞는 이메일이 존재하지 않습니다.");
@@ -168,7 +168,7 @@ public class MemberController {
 			if(result != null) {
 				session.setAttribute("alertTitle", "Password");
 				session.setAttribute("alertMsg", result.getMemPwd());
-				return "member/login";
+				return "redirect:/";
 			}else {
 				session.setAttribute("alertTitle", "Password");
 				session.setAttribute("alertMsg", "입력하신 정보에 맞는 비밀번호가 존재하지 않습니다.");
