@@ -19,6 +19,21 @@ public class MemberDao {
 		return sqlSession.insert("memberMapper.signupMember", m);
 	}
 	
+	// 이메일 중복 확인
+	public int confirmEmail(SqlSessionTemplate sqlSession, String email) {
+		return sqlSession.selectOne("memberMapper.confirmEmail", email);
+	}
+	
+	// 이메일 찾기 
+	public Member selectEmail(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.selectEmail", m);
+	}
+	
+	// 비밀번호 찾기
+	public Member selectPwd(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.selectPwd", m);
+	}
+	
 	// 메인 페이지 select
 	public MainPage selectMain(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("mainMapper.selectMain");
@@ -29,9 +44,5 @@ public class MemberDao {
 		return sqlSession.update("mainMapper.updateMain", mp);
 	}
 	
-	// 이메일 중복 확인
-	public int confirmEmail(SqlSessionTemplate sqlSession, String email) {
-		return sqlSession.selectOne("memberMapper.confirmEmail", email);
-	}
 
 }
