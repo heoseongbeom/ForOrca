@@ -41,6 +41,8 @@ body {
 	position:relative; 
 	height: 100vh;
 	place-items: center;
+  overflow-x: clip;
+  overflow-y: clip;
 }
 
 .form__title {
@@ -193,7 +195,8 @@ body {
 
 .form {
 	background-color: var(--white);
-	display: flex;
+	/*display: flex;*/
+  margin: 10px 15px 0px -5px; /* 회원가입창 정중앙으로 조정*/
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -263,6 +266,16 @@ body {
 body.swal2-height-auto{
 	height:940px!important;
 }
+
+
+#confirmBtn:hover{
+  background-color: lightgray;
+}
+
+#successEmail, #failEmail{
+  display: none;
+  font-size: 13px
+}
 </style>
 </head>
 
@@ -301,24 +314,27 @@ body.swal2-height-auto{
   <div class="container ">
     <!-- Sign In -->
     <div class="container__form container--signin">
-      <form action="login.me" class="form" id="form2" method="post">
+      <form action="login.me" class="form" id="form2" method="post" style="margin: 0px 0px 0px 0px; display:flex;">
         <h2 class="form__title">Sign In</h2>
         <input type="email" name="memEmail" placeholder="Email" class="input" required/>
         <input type="password" name="memPwd" placeholder="Password" class="input" required/>
-        <a href="#" class="link">Forgot your password?</a>
+        <a href="findEmailPwdForm.me" class="link">Forgot your Email or Password?</a>
         <button type="submit" class="btn">Sign In</button>
       </form>
     </div>
     <!-- Sign Up -->
     <div class="container__form container--signup">
-      <form action="signup.me" class="form" id="form1" method="post">
+      <form action="signup.me" class="form" id="form1" method="post"  onsubmit="return submitCheck();">
         <h2 class="form__title">Sign Up</h2>
         <input type="text" name="memName" id="userName" placeholder="User" class="input" style="height:5px"  required/>
-        <input type="email" name="memEmail" id="userEmail" name="email"  placeholder="Email" class="input" style="height:5px" required/>
+        <input type="email" name="memEmail" id="userEmail" placeholder="Email" class="input" style="height:5px; margin-left:-20px; width:220px;" required/>
+        <input type="hidden" id="userEmailCo">
+        <button onclick="confirmEmail();" type="button" id="confirmBtn" style="border-radius: 5px; background-color: white; margin-right:-50px; width: 50px; height: 30px; border: 0.5px solid whitesmoke;">확인</button>
         <span class="emailInput">이메일 형식이 올바르지 않습니다.</span>
+        <span id="failEmail" style="color:red">입력해주세요.</span>
         <input type="password" name="memPwd" id="userPwd" placeholder="Password" class="input" style="height:5px" required/>
         <span class="pwdInput3">6자리 이상의 비밀번호를 입력해주세요.</span>
-        <input type="password" id="userPwdCo" placeholder="Confirm Password" class="input" style="height:5px" required/>
+        <input type="password" name="memPwdCo" id="userPwdCo" placeholder="Confirm Password" class="input" style="height:5px" required/>
         <span class="pwdInput1">비밀번호가 일치합니다.</span>
         <span class="pwdInput2">비밀번호가 일치하지 않습니다.</span>
         <span class="pwdInput4">6자리 이상의 비밀번호를 입력해주세요.</span>
@@ -341,33 +357,145 @@ body.swal2-height-auto{
     </div>
   </div>
 
-<script language="javascript">
-  var emailInput;
+  <!-- 이메일 중복 확인용 ajax -->
+  <script> 
+    function confirmEmail(){
+      $.ajax({
+        url:"confirmEmail.me",
+        type:"get",
+        data:{
+          email:$("#userEmail").val()
+        },
+        success:function(response){
+          
+          var email = response.value1;
+          var result = response.value2;
+          var input = $('#userEmailCo');
+          if(result == 0){
+            Swal.fire({
+                 text: "사용 가능한 이메일입니다.",
+                 allowOutsideClick: false,
+                 showConfirmButton: true,
+                 closeOnConfirm: true,
+                 confirmButtonText: 'OK',
+                 confirmButtonColor: 'slategray',
+                 animation: true,
+                 allowEscapeKey: true,
+                 inputType: 'text',
+                 showLoaderOnConfirm: true
+       		  });
+            console.log("ajax" + email);
+            input.val(email);
+            console.log(input.val());
+            // $("button[class='swal2-confirm swal2-styled']").click(function(){
+            //   $('#userEmail').attr('readonly', true);
+            //   $('#confirmBtn').attr('readonly', true);
+            // });
 
-$("#email-input").on("change", function() {
-  emailInput = $(this).val();
+            //$('#userEmail').val(email);
+          }else{
+            Swal.fire({
+                 text: "중복된 이메일입니다.",
+                 allowOutsideClick: false,
+                 showConfirmButton: true,
+                 closeOnConfirm: true,
+                 confirmButtonText: 'OK',
+                 confirmButtonColor: 'slategray',
+                 animation: true,
+                 allowEscapeKey: true,
+                 inputType: 'text',
+                 showLoaderOnConfirm: true
+       		  });
+          }
+          console.log(result);
+        },error:function(){
+          console.log("ajax통신 실패");
+          
+        }
+      })
+    }
+   
+  </script>
+  
 
-  if (validateEmail(emailInput)) {
-    $(this).css({
-      color: "white",
-      background: "green",
-      border: "1px solid green"
+<script>
+  
+  // form1의 submit여부 function
+  function submitCheck(){
+    var userPwd = $('#userPwd').val(); // 입력한 비밀번호 value
+    var userPwdCo = $('#userPwdCo').val(); // 입력한 비밀번호 확인용 value
+    var email1 = $('#userEmail').val();
+    var email2 = $('#userEmailCo').val();
+    
+    console.log(userPwd);
+    if(userPwd.length < 6){
+      Swal.fire({
+           text: "비밀번호를 6자리 이상 입력해주십시오.",
+           allowOutsideClick: false,
+           showConfirmButton: true,
+           closeOnConfirm: true,
+           confirmButtonText: 'OK',
+           confirmButtonColor: 'slategray',
+           animation: true,
+           allowEscapeKey: true,
+           inputType: 'text',
+           showLoaderOnConfirm: true
+           
+       });
+       console.log("첫번째 성공");
+      return false;
+    }else if(userPwd != userPwdCo || userPwdCo.length < 6 ){
+      Swal.fire({
+           text: "비밀번호가 일치하지 않습니다.",
+           allowOutsideClick: false,
+           showConfirmButton: true,
+           closeOnConfirm: true,
+           confirmButtonText: 'OK',
+           confirmButtonColor: 'slategray',
+           animation: true,
+           allowEscapeKey: true,
+           inputType: 'text',
+           showLoaderOnConfirm: true
     });
-  } else {
-    $(this).css({
-      color: "red",
-      border: "1px solid red"
+    return false;
+  }else if(email1 != email2){
+    Swal.fire({
+           text: "이메일 중복 확인을 해주십시오.",
+           allowOutsideClick: false,
+           showConfirmButton: true,
+           closeOnConfirm: true,
+           confirmButtonText: 'OK',
+           confirmButtonColor: 'slategray',
+           animation: true,
+           allowEscapeKey: true,
+           inputType: 'text',
+           showLoaderOnConfirm: true
     });
-
-    // alert("not a valid email address");
+    console.log(email1);
+    console.log(email2);
+    return false;
+  }else if(email2 == null){
+    Swal.fire({
+           title: "중복된 이메일",
+           text: "다른 이메일을 입력해 주십시오.",
+           allowOutsideClick: false,
+           showConfirmButton: true,
+           closeOnConfirm: true,
+           confirmButtonText: 'OK',
+           confirmButtonColor: 'slategray',
+           animation: true,
+           allowEscapeKey: true,
+           inputType: 'text',
+           showLoaderOnConfirm: true
+    });
+    return false;
+  }else{
+    return true;
   }
-});
-
-
-
-
+}
 </script>
 
+<!-- 로그인 화면 movement js -->
 <script>
 const signInBtn = document.getElementById("signIn");
 const signUpBtn = document.getElementById("signUp");
@@ -382,71 +510,28 @@ signInBtn.addEventListener("click", () => {
 signUpBtn.addEventListener("click", () => {
 	container.classList.add("right-panel-active");
 });
-
-
 </script>
 
+
+<!-- password 6자리 이상 검사 js -->
 <script>
-
-  var code = "" ;                // 이메일 전송 인증번호 저장위한 콛
-
-  /* 유효성 검사 통과유무 변수 */
-  var emailCheck = false;            // 이메일
-  var mailNumCheck = false;        // 이메일 인증번호 확인
-  var pwdCheck = false;            // 비번
-  var pwdDoubleCheck = false;            // 비번 확인
-  var pwdEqCheck = false;        // 비번 확인 일치 확인
-  var nameCheck = false;            // 이름
-
-  $(document).ready(function(){
-
-    $("#joinBtn").click(function(){
-      
-      /* 입력값 변수 */
-      var mail = $('#userEmail').val();            // 이메일 입력란
-      var pwd = $('#userPwd').val();                // 비밀번호 입력란
-      var pwdDo = $('#userPwdCo').val();            // 비밀번호 확인 입력란
-      var name = $('#userName').val();            // 이름 입력란
-      
-      //$("#join_form").attr("action", "/member/join");
-      //$("#join_form").submit();
-      
-      /* 비밀번호 정규식 검사 */
-      if(pwd < 6){
-        pwdCheck = false;
-      }else{
-        pwdCheck = true;
-      }
-
-      /* 비밀번호 유효성 검사 */
-      if(pwd == ""){
-        pwdCheck = false;
-      }else{
-        pwdCheck = true;
-      }
-      
-      /* 비밀번호 확인 유효성 검사 */
-      if(pwdDo == ""){
-        pwdCheck = false;
-      }else{
-        pwdCheck = true;
-      }
-
-    });
-  });
-
   $('#userPwd').on("propertychange change keyup paste input", function(){
 
     var pwd = $('#userPwd').val();
+    var pwdDo = $('#userPwdCo').val();
 
     if(pwd.length < 6){
+      $('.pwdInput1').css('display', 'none');
+      $('.pwdInput2').css('display', 'none');
       $('.pwdInput3').css('display', 'block');
-      $('.pwdInput1').css('display', 'none');
-      $('.pwdInput2').css('display', 'none');
-    }else{
+    }else if(pwd != pwdDo){
+      $('.pwdInput1').css('display','none');
+      $('.pwdInput2').css('display','block');
       $('.pwdInput3').css('display', 'none');
-      $('.pwdInput1').css('display', 'none');
+    }else{
+      $('.pwdInput1').css('display', 'block');
       $('.pwdInput2').css('display', 'none');
+      $('.pwdInput3').css('display', 'none');
     }
     console.log('6자리이상');
   });
@@ -460,25 +545,24 @@ signUpBtn.addEventListener("click", () => {
       $('.pwdInput1').css('display','none');
       $('.pwdInput2').css('display','none');
       $('.pwdInput4').css('display', 'block');
-      pwdEqCheck = false;
-      console.log('ddd');
+      console.log('비밀번호확인 6자리 미만임');
     }else if(pwd == pwdDo){
       $('.pwdInput1').css('display','block');
       $('.pwdInput2').css('display','none');
       $('.pwdInput4').css('display', 'none');
-      pwdEqCheck = true;
-      console.log('ddd');
+      console.log('비밀번호 같음');
     }else{
       $('.pwdInput1').css('display','none');
       $('.pwdInput2').css('display','block');
       $('.pwdInput4').css('display', 'none');
-      pwdEqCheck = false;
       console.log('dddsdwd');
     }
   });
 
 </script>
 
+
+<!-- email 정규식 검사 자바 스크립-->
 <script>
   $('#userEmail').on("propertychange change keyup paste input", function(){
 
@@ -487,10 +571,8 @@ signUpBtn.addEventListener("click", () => {
     console.log(regex.test(email));
     if(regex.test(email) == false){
       $('.emailInput').css('display', 'block');
-      emailCheck = false;
     }else{
       $('.emailInput').css('display', 'none');
-      emailCheck = true;
     }
     
   });
