@@ -19,6 +19,7 @@ public class Member {
 	private String memName;
 	private String memEmail;	
 	private String memPwd;
+	private String memPwdCo; // 비밀번호 확인용
 	private String memInstarId;
 	private Date memEnrollDate;
 	private String memState;
