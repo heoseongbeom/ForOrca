@@ -12,6 +12,7 @@
 		<result column="main_icon_change" property="mainIconChange" />
 	</resultMap>
 	
+	<!-- 메인 페이지 select 기능 -->
 	<select id="selectMain" resultMap="mainResult">
 		select
 			   main_instar_address
@@ -22,6 +23,7 @@
 	      from main
 	</select>
 	
+	<!-- 메인 페이지 update 기능 -->
 	<update id="updateMain">
 		update
 		       main
