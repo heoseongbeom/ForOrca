@@ -1,6 +1,8 @@
 package com.orca.kim.member.controller;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -54,7 +56,7 @@ public class MemberController {
 		// 회원가입 컨트롤러
 		@RequestMapping("signup.me")
 		public ModelAndView signupMember(Member m, HttpSession session, ModelAndView mv) {
-			
+			System.out.println(m);
 			int result = mService.signupMember(m);
 			
 			//Member rm = mService.loginMember();
@@ -120,7 +122,7 @@ public class MemberController {
 				return "redirect:mainPage.me";
 			}else {
 				session.setAttribute("alertMsg", "Update Fail");
-				return "redirect/";
+				return "redirect:updateMain.me";
 			}
 		}
 		
@@ -129,13 +131,49 @@ public class MemberController {
 		@RequestMapping(value="confirmEmail.me", produces="application/json; charset=UTF-8")
 		public String confirmEmail(String email) {
 			int result = mService.confirmEmail(email);
+			Map<String, Object> response = new HashMap<String, Object>();
 			System.out.println(result);
-			return new Gson().toJson(result);
+			response.put("value1", email);
+			response.put("value2", result);
+			return new Gson().toJson(response);
 		}
 		
+		// email,password 찾기 창 띄우기
 		@RequestMapping("findEmailPwdForm.me")
 		public String findEmailPwdForm() {
-			return "findEmailPwd";
+			return "member/findEmailPwd";
+		}
+		
+		// email 찾기 기능 컨트롤러
+		@RequestMapping("findEmail.me")
+		public String selectEmail(Member m, HttpSession session) {
+			Member result = mService.selectEmail(m);
+			
+			if(result != null) {
+				session.setAttribute("alertTitle", "Email");
+				session.setAttribute("alertMsg", result.getMemEmail());
+				return "member/login";
+			}else {
+				session.setAttribute("alertTitle", "Email");
+				session.setAttribute("alertMsg", "입력하신 정보에 맞는 이메일이 존재하지 않습니다.");
+				return "member/findEmailPwd";
+			}
+		}
+		
+		// password 찾기 기능 컨트롤러
+		@RequestMapping("findPwd.me")
+		public String selectPwd(Member m, HttpSession session) {
+			Member result = mService.selectPwd(m);
+			
+			if(result != null) {
+				session.setAttribute("alertTitle", "Password");
+				session.setAttribute("alertMsg", result.getMemPwd());
+				return "member/login";
+			}else {
+				session.setAttribute("alertTitle", "Password");
+				session.setAttribute("alertMsg", "입력하신 정보에 맞는 비밀번호가 존재하지 않습니다.");
+				return "member/findEmailPwd";
+			}
 		}
 
 
