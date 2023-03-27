@@ -67,6 +67,7 @@
 		<result column="about_story_change_img5" property="aboutStoryChangeImg5" />
 	</resultMap>
 	
+	<!-- about 페이지 select 기능 -->
 	<select id="selectAbout" resultMap="aboutResult">
 		select
 				about_no
@@ -134,6 +135,7 @@
 		  from about
 	</select>
 	
+	<!-- about 페이지 update 기능 -->
 	<update id="updateAbout">
 		update
 			   about
