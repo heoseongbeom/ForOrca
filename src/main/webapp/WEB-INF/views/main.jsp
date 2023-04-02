@@ -62,7 +62,7 @@
       <div class="header-social-links">
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
         &nbsp;
-        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">logout</a>
+        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
         <c:if test="${ loginUser.memState eq '1' }">
         	<a href="mainUpdateForm.me" data-toggle="modal">Update Page</a>
         </c:if>

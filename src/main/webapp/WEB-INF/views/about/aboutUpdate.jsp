@@ -77,7 +77,7 @@
       <div class="header-social-links">
         <button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
 		&nbsp;&nbsp;&nbsp;
-        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">logout</a>		
+        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>		
       </div>
 
     </div>
