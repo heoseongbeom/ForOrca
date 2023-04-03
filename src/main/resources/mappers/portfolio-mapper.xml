@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="portfolioMapper">
+
+	<resultMap id="portfolioResult" type="Portfolio">
+		<result column="port_no" property="portNo" />
+		<result column="port_text" property="portText" />
+		<result column="port_origin_photo" property="portOriginPhoto" />
+		<result column="port_change_photo" property="portChangePhoto" />
+		<result column="port_category" property="portCategory" />
+	</resultMap>
+	
+	<!-- insert 기능 -->
+	<insert id="insertPortfolio">
+		insert
+		  into portfolio
+		  (
+		    port_no
+		  , port_text
+		  , port_origin_photo
+		  , port_change_photo
+		  , port_category  
+		  )
+		  values
+		  (
+		    seq_portno.nextval
+		  , #{portText}
+		  , #{portOriginPhoto}
+		  , #{portChangePhoto}
+		  , #{portCategory}  
+		  )
+	</insert>
+	
+
+</mapper>
