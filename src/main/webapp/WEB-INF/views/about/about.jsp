@@ -39,7 +39,7 @@
           <li><a class="active" href="about.me">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.me">Portfolio</a></li>
+          <li><a href="portfolio.po">Portfolio</a></li>
           <li><a href="contact.me">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

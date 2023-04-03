@@ -38,19 +38,22 @@
         <ul>
           <li><a href="mainPage.me">Home</a></li>
           <li><a href="about.me">About</a></li>
-          <li><a href="schedule.me">schedule</a></li>
-          <li><a href="finance.me">finance</a></li>
-          <li><a class="active" href="portfolio.me">Portfolio</a></li>
+          <li><a href="schedule.me">Schedule</a></li>
+          <li><a href="finance.me">Finance</a></li>
+          <li><a class="active" href="portfolio.po">Portfolio</a></li>
           <li><a href="contact.me">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        &nbsp;
+        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+		&nbsp;
+        <c:if test="${ loginUser.memState eq '1' }">
+        	<a href="portfolioAdd.po" data-toggle="modal">Upload File</a>
+        </c:if>
       </div>
 
     </div>
@@ -72,7 +75,7 @@
 			  <div class="col-lg-12 d-flex justify-content-center">
 				<ul id="portfolio-flters">
 				  <li data-filter="*" class="filter-active">All</li>
-				  <li data-filter=".filter-app">Traveling</li>
+				  <li data-filter="#animal">Traveling</li>
 				  <li data-filter=".filter-card">Daily</li>
 				  <li data-filter=".filter-web">Events</li>
 				</ul>
@@ -83,7 +86,7 @@
 
 			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+				<div class="col-lg-4 col-md-6 portfolio-item filter-card" id="animal">
 					<div class="portfolio-wrap">
 						<img src="${pageContext.request.contextPath}/resources/img/언니카페.jpg" class="img-fluid" alt="">
 						<div class="portfolio-info">
