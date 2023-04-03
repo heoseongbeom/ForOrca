@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Favicons -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
   <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -23,8 +24,68 @@
   <!-- Template Main CSS File -->
   <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 
+
+<style>
+	.btn {
+		background-color: #000000;
+		background-image: linear-gradient(90deg, #3c454a 0%, #687576 74%);
+		border-radius: 20px;
+		border: 1px solid #606468;
+		color: white;
+		cursor: pointer;
+		font-size: 0.8rem;
+		font-weight: bold;
+		letter-spacing: 0.1rem;
+		padding: 0.9rem 4rem;
+		text-transform: uppercase;
+		transition: transform 80ms ease-in;
+	}
+
+	.form > .btn {
+		margin-top: 1.5rem;
+	}
+
+	.btn:active {
+		transform: scale(0.95);
+	}
+
+	.btn:focus {
+		outline: none;
+	}
+</style>
 </head>
 <body>
+
+	<c:if test="${ not empty alertMsg }">
+		<script>
+             Swal.fire({
+                 title: "${alertTitle}",
+                 text: "${alertMsg}",
+                 allowOutsideClick: false,
+                 showConfirmButton: true,
+                 showCancelButton: false,
+                 closeOnConfirm: true,
+                 closeOnCancel: true,
+                 confirmButtonText: 'OK',
+                 confirmButtonColor: 'slategray',
+                 cancelButtonText: 'Cancel',
+                 imageUrl: null,
+                 imageSize: null,
+                 timer: null,
+                 customClass: '',
+                 html: false,
+                 animation: true,
+                 allowEscapeKey: true,
+                 inputType: 'text',
+                 inputPlaceholder: '',
+                 inputValue: '',
+                 showLoaderOnConfirm: false
+       		  });
+			  
+		</script>
+		<c:remove var="alertTitle" scope="session" />
+		<c:remove var="alertMsg" scope="session" /> <!-- 일회성 메시지의 역할을 하기 위해 지워주기 -->
+	</c:if>
 
 	<!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -38,9 +99,9 @@
         <ul>
           <li><a href="mainPage.me">Home</a></li>
           <li><a href="about.me">About</a></li>
-          <li><a href="schedule.me">schedule</a></li>
-          <li><a href="finance.me">finance</a></li>
-          <li><a class="active" href="portfolio.me">Portfolio</a></li>
+          <li><a href="schedule.me">Schedule</a></li>
+          <li><a href="finance.me">Finance</a></li>
+          <li><a class="active" href="portfolio.po">Portfolio</a></li>
           <li><a href="contact.me">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -60,32 +121,38 @@
 		<!-- ======= Portfolio Section ======= -->
 		<section id="portfolio" class="portfolio" style="text-align-last: center;">
 		  
-			<h1>Add Portfolio</h1>
+			<h1>Upload Portfolio</h1>
 			<br><br><br>
-			<form action="">
+			<form action="portfolioInsert.po" method="post" enctype="multipart/form-data">
+				<h4>Photo</h4>
 				<input type="file" name="upfile" class="input">
 				<br><br><br><br>
-				<textarea name="portfolioText" id="" cols="80" rows="10" style="resize:none;"></textarea>
-				<br><br><br>
+
+				<h4>Photo Text</h4>
+				<textarea name="portText" id="" cols="80" rows="10" style="resize:none;"></textarea>
+				<br><br><br><br>
+
 				<h4>Category</h4>
-				<br>
-				<select name="portfoCategory" id="portSelect">
+				<select name="portCategory" id="portSelect">
 					<option value="">--Please choose an option--</option>
-					<option value="apple">Apple</option>
-					<option value="banana">Banana</option>
-					<option value="orange">Orange</option>
+					<option value="animal">Animal</option>
+					<option value="nature">Nature</option>
+					<option value="etc">etc</option>
 				  </select>
-				  <br><br>
-				<button type="submit" class="btn" id="submitPort">Upload</button>
+				  <br><br><br>
+				<button type="button" class="btn" onclick="port();" id="submitPort">Upload</button>
 			</form>
 			
 
 			<!-- Select Option 선택 안했을시 alert창 띄우기 -->
 			<script>
-				$(document).ready(function() {
-					$('#submitPort').click(function() {
-						var selectedOption = $('#portSelect').val();
-						if (selectedOption == '') {
+				var selectedOption = $('#portSelect').val();
+				console.log(selectedOption);
+				function port(){
+					console.log('준비');
+					
+						console.log("진행중");
+						if (selectedOption == "") {
 							Swal.fire({
 							text: "Please select an option.",
 							allowOutsideClick: false,
@@ -98,6 +165,32 @@
 							inputType: 'text',
 							showLoaderOnConfirm: true
 							});
+							console.log('완료');
+						return false;
+						}else{
+							return true;
+						}
+				};
+
+				$(document).ready(function() {
+					console.log('준비');
+					$('#submitPort').on("click", function() {
+						var selectedOption = $('#portSelect').val();
+						console.log("진행중");
+						if (selectedOption == "") {
+							Swal.fire({
+							text: "Please select an option.",
+							allowOutsideClick: false,
+							showConfirmButton: true,
+							closeOnConfirm: true,
+							confirmButtonText: 'OK',
+							confirmButtonColor: 'slategray',
+							animation: true,
+							allowEscapeKey: true,
+							inputType: 'text',
+							showLoaderOnConfirm: true
+							});
+							console.log('완료');
 						return false;
 						}
 						
