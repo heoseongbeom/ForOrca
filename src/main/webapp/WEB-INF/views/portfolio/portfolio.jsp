@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Favicons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
   <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
   <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -23,6 +24,8 @@
   <!-- Template Main CSS File -->
   <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 
+  <!-- Font Awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -64,192 +67,57 @@
 
 		<!-- ======= Portfolio Section ======= -->
 		<section id="portfolio" class="portfolio">
-		  <div class="container" data-aos="fade-up">
+			<div class="container" data-aos="fade-up">
 	
-			<div class="section-title">
-			  <h2>Portfolio</h2>
-			  <p>원래는 여보 타투 작업 사진 넣어야 되지만! 지금은 우리의 추억을 한번 담아봤옹 ㅎㅎ</p>
-			</div>
-	
-			<div class="row" data-aos="fade-up" data-aos-delay="100">
-			  <div class="col-lg-12 d-flex justify-content-center">
-				<ul id="portfolio-flters">
-				  <li data-filter="*" class="filter-active">All</li>
-				  <li data-filter="#animal">Traveling</li>
-				  <li data-filter=".filter-card">Daily</li>
-				  <li data-filter=".filter-web">Events</li>
-				</ul>
-			  </div>
-			</div>
-			
-			<br>
-
-			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-				<div class="col-lg-4 col-md-6 portfolio-item filter-card" id="animal">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/언니카페.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>룡언니 카페에서 저떄 너무 좋아떠 ㅎㅎ</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/언니카페.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="룡언니 카페에서 저떄 너무 좋아떠 ㅎㅎ"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>	
-
-				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/말똥.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>말똥 도넛! 이 때 우리 싸워따..? ㅋㅋㅋ</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/말똥.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="말똥 도넛! 이 때 우리 싸워따..? ㅋㅋㅋ"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
+				<div class="section-title">
+				<h2>Portfolio</h2>
 				</div>
-				  
-
-	
-				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/생일.webp" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>생일 서프라이즈.. 너무 감동이어서 눈물 참느라 힘드러따..!</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/생일.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="생일 서프라이즈.. 너무 감동이어서 눈물 참느라 힘드러따..!"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
+		
+				<div class="row" data-aos="fade-up" data-aos-delay="100">
+				<div class="col-lg-12 d-flex justify-content-center">
+					<ul id="portfolio-flters">
+					<li data-filter="*" class="filter-active">All</li>
+					<li data-filter="#animal">Animal</li>
+					<li data-filter="#nature">Nature</li>
+					<li data-filter="#etc">Etc</li>
+					</ul>
 				</div>
-
-				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/한강.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>여의도 한강공원에서 곧 캐나다로 떠날 때라 많이 무서워찡..</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/한강.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="여의도 한강공원에서 곧 캐나다로 떠날 때라 많이 무서워찡.."><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
 				</div>
 				
-				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/영종도.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>영종도에서 진짜 진짜 더웠는뎅 그래두 행복해찌 힣</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/영종도.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="영종도에서 진짜 진짜 더웠는뎅 그래두 행복해찌 힣"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<br>
 
-				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/공항.webp" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>우리가 만나고 처음 떨어진 날.. 진짜 슬펐는데 지금은 여보가 옆에 있넹~~?</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/공항.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="우리가 만나고 처음 떨어진 날.. 진짜 슬펐는데 지금은 여보가 옆에 있넹~~?"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-	
-			 
-				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/고성.webp" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>강원도 고성 펜션 테라스 쨩!</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/고성.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="강원도 고성 펜션 테라스 쨩!"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/루지.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>강화도 루지 잼써따!!</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/루지.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="강화도 루지 잼써따!!"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+					<c:choose>
+						<c:when test="${ empty list }">
+							<div class="portfolio-wrap">
+								<h2>Empty Photo</h2>
 							</div>
-						</div>
-					</div>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var="p"  items="${ list }">
+								<div class="col-lg-4 col-md-6 portfolio-item filter-card" id="${ p.portCategory }">
+									<div class="portfolio-wrap">
+										<input type="hidden" class="portNo" value="${p.portNo}">
+										<img src="${ p.portChangePhoto }" class="img-fluid" alt="">
+										<div class="portfolio-info">
+											<h4>${ p.portText }</h4>
+											<div class="portfolio-links">
+												<a href="${ p.portChangePhoto }" data-gallery="portfolioGallery" class="portfolio-lightbox" title="${ p.portText }"><i class="bx bx-plus"></i></a>
+												<c:if test="${ loginUser.memState eq '1' }">
+													<a href="portfolioUpdateForm.po?no=${p.portNo}" title="Edit" class="updatePort"><i class="fas fa-pencil" style="font-size: smaller;"></i></a>&nbsp;&nbsp;
+													<a href="portfolioDelete.po" title="Delete"><i class="fa-regular fa-trash-can" style="font-size: smaller;"></i></a>
+												</c:if>
+												<!--<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>    
+						</c:otherwise>
+					</c:choose>
 				</div>
-		
-				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/카페.webp" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>펜션 앞 카페 루프탑도 좋아찌~</h4>
-								<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/카페.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="펜션 앞 카페 루프탑도 좋아찌~"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-		
-				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/등대.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>내가 소중이 같다고 한...ㅎㅎ</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/등대.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="내가 소중이 같다고 한...ㅎㅎ"><i class="bx bx-plus"></i></a>
-								<a href="https://www.instagram.com/p/Cni-S74rDOJ/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/결혼식.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>룡언니 결혼식 후 대곶 카페.. 여기 시그니처 커피가 쨩이어찌~~</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/결혼식.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="룡언니 결혼식 후 대곶 카페.. 여기 시그니처 커피가 쨩이어찌~~"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-					<div class="portfolio-wrap">
-						<img src="${pageContext.request.contextPath}/resources/img/김현아.jpg" class="img-fluid" alt="">
-						<div class="portfolio-info">
-							<h4>버미랑 버미 엄마 누나랑 김현아에서 쇼핑~~</h4>
-							<div class="portfolio-links">
-								<a href="${pageContext.request.contextPath}/resources/img/김현아.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="버미랑 버미 엄마 누나랑 김현아에서 쇼핑~~"><i class="bx bx-plus"></i></a>
-								<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			  
-	
 			</div>
-	
-		  </div>
 		</section><!-- End Portfolio Section -->
 	
 	  </main><!-- End #main -->
