@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class Portfolio {
 	
-	private String portNo;
+	private int portNo;
 	private String portText;
 	private String portOriginPhoto;
 	private String portChangePhoto;
