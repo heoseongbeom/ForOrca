@@ -10,7 +10,18 @@
 		<result column="port_category" property="portCategory" />
 	</resultMap>
 	
-	<!-- insert 기능 -->
+	<!-- portfolio 페이지 select 기능 -->
+	<select id="selectPortfolio" resultMap="portfolioResult">
+		select
+			   port_no
+			 , port_text
+			 , port_origin_photo
+			 , port_change_photo
+			 , port_category
+		  from portfolio
+	</select>
+	
+	<!-- portfolioAdd 페이지 insert 기능 -->
 	<insert id="insertPortfolio">
 		insert
 		  into portfolio
@@ -31,5 +42,19 @@
 		  )
 	</insert>
 	
-
+	<!-- portfolioUpdateForm 페이지 select 기능 -->
+	<select id="selectPortfolioUpdateForm" resultMap="portfolioResult">
+		select
+		       port_no
+		     , port_text
+		     , port_origin_photo
+		     , port_change_photo
+		     , port_category
+		 from portfolio
+		where port_no = #{portNo}
+	</select>
+	
+	
+	
+	
 </mapper>
