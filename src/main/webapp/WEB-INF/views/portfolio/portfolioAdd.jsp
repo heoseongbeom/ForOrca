@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- Favicons -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
   <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -140,15 +140,15 @@
 					<option value="etc">etc</option>
 				  </select>
 				  <br><br><br>
-				<button type="button" class="btn" onclick="port();" id="submitPort">Upload</button>
+				<button type="submit" class="btn" onclick="return port();" id="submitPort">Upload</button>
 			</form>
 			
 
 			<!-- Select Option 선택 안했을시 alert창 띄우기 -->
 			<script>
-				var selectedOption = $('#portSelect').val();
-				console.log(selectedOption);
 				function port(){
+					var selectedOption = $('#portSelect').val();
+					console.log(selectedOption);
 					console.log('준비');
 					
 						console.log("진행중");
@@ -172,30 +172,7 @@
 						}
 				};
 
-				$(document).ready(function() {
-					console.log('준비');
-					$('#submitPort').on("click", function() {
-						var selectedOption = $('#portSelect').val();
-						console.log("진행중");
-						if (selectedOption == "") {
-							Swal.fire({
-							text: "Please select an option.",
-							allowOutsideClick: false,
-							showConfirmButton: true,
-							closeOnConfirm: true,
-							confirmButtonText: 'OK',
-							confirmButtonColor: 'slategray',
-							animation: true,
-							allowEscapeKey: true,
-							inputType: 'text',
-							showLoaderOnConfirm: true
-							});
-							console.log('완료');
-						return false;
-						}
-						
-					});
-				});
+			
 				
 				</script>
 
