@@ -98,11 +98,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.me">About</a></li>
+          <li><a href="about.ab">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
           <li><a class="active" href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
+          <li><a href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -123,10 +123,10 @@
 		  
 			<h1>Upload Portfolio</h1>
 			<br><br><br>
-			<form action="portfolioInsert.po" method="post" enctype="multipart/form-data">
+			<form action="portfolioUpdate.po" method="post" enctype="multipart/form-data">
 				<h4>Photo</h4><br>
 				<img src="${p.portChangePhoto}" style="width:150px; height:auto;">
-				<input type="hidden" name="portNo" value="${portNo}">
+				<input type="hidden" name="portNo" value="${p.portNo}">
 				<input type="hidden" name="portOriginPhoto" value="${p.portOriginPhoto}">
 				<input type="hidden" name="portChangePhoto" value="${p.portChangePhoto}">
 				<input type="file" name="upfile" class="input">
@@ -166,39 +166,12 @@
 			</form>
 			
 
-			<!-- Select Option 선택 안했을시 alert창 띄우기 -->
+			<!-- cancel 버튼 클릭시 portfolio.jsp로 이동 -->
 			<script>
-				function editPort(){
-					var selectedOption = $('#portSelect').val();
-					console.log(selectedOption);
-					console.log("진행중");
-					if (selectedOption == "") {
-						Swal.fire({
-						text: "Please select an option.",
-						allowOutsideClick: false,
-						showConfirmButton: true,
-						closeOnConfirm: true,
-						confirmButtonText: 'OK',
-						confirmButtonColor: 'slategray',
-						animation: true,
-						allowEscapeKey: true,
-						inputType: 'text',
-						showLoaderOnConfirm: true
-						});
-						console.log('완료');
-					return false;
-					}else{
-						return true;
-					}
-				};
-				</script>
-
-				<!-- cancel 버튼 클릭시 portfolio.jsp로 이동 -->
-				<script>
-					function cancel(){
-						location.href = 'portfolio.po';
-					}
-				</script>
+				function cancel(){
+					location.href = 'portfolio.po';
+				}
+			</script>
 
 
 		</section><!-- End Portfolio Section -->
