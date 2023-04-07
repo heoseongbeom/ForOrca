@@ -76,5 +76,42 @@ public class PortfolioController {
 		return mv;
 	}
 	
+	// portfolioUpdateFomr update 컨트롤러
+		@RequestMapping("portfolioUpdate.po")
+		public String updatePortfolio(Portfolio p, HttpSession session, MultipartFile upfile) {
+			if(!upfile.getOriginalFilename().equals("")) {
+				String saveFilePath = FileUpload.saveFile(upfile, session, "resources/uploadFiles/");
+				p.setPortOriginPhoto(upfile.getOriginalFilename());
+				p.setPortChangePhoto(saveFilePath);
+			}
+			int result = pService.updatePortfolio(p);
+			
+			if(result > 0) {
+				session.setAttribute("alertTitle", "수정 완료");
+				session.setAttribute("alertMsg", "Update Complete");
+				return "redirect:portfolio.po";
+			}else {
+				session.setAttribute("alertTitle", "수정 실패");
+				session.setAttribute("alertMsg", "Update Complete");
+				return "redirect/";
+			}
+		}
+		
+		// portfolio updateForm 페이지 이동 컨트롤러
+		@RequestMapping("portfolioDelete.po")
+		public String deletePortfolio(int no, HttpSession session) {
+			System.out.println(no);
+			int result = pService.deletePortfolio(no);
+
+			if(result > 0) {
+				session.setAttribute("alertTitle", "삭제 완료");
+				session.setAttribute("alertMsg", "Delete Complete");
+				return "redirect:portfolio.po";
+			}else {
+				session.setAttribute("alertTitle", "삭제 실패");
+				session.setAttribute("alertMsg", "Delete Complete");
+				return "redirect/";
+			}
+		}
 	
 }
