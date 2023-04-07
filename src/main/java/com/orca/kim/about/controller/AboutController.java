@@ -31,7 +31,7 @@ public class AboutController {
 	private AboutService aService;
 	
 	// about 패이지 이동 select 컨트롤러
-	@RequestMapping("about.me")
+	@RequestMapping("about.ab")
 	public ModelAndView selectAbout(ModelAndView mv) {
 		
 		About a = aService.selectAbout();
@@ -41,7 +41,7 @@ public class AboutController {
 	}
 	
 	// aboutUpdate 페이지 이동 및 select 컨트롤러
-	@RequestMapping("aboutUpdateForm.me")
+	@RequestMapping("aboutUpdateForm.ab")
 	public ModelAndView aboutUpdateForm(ModelAndView mv) {
 		About a = aService.selectAbout();
 		mv.addObject("a", a).setViewName("about/aboutUpdate");
@@ -50,7 +50,7 @@ public class AboutController {
 	
 	
 	// about 페이지 update 컨트롤러
-	@RequestMapping("aboutUpdate.me")
+	@RequestMapping("aboutUpdate.ab")
 	public String updateAbout(About a, HttpSession session,  MultipartFile upfile) {
 		
 		
