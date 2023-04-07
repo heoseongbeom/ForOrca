@@ -36,20 +36,23 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.me">About</a></li>
+          <li><a href="about.ab">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
           <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a class="active" href="contact.me">Contact</a></li>
+          <li><a class="active" href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        &nbsp;
+        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+		    &nbsp;
+        <c:if test="${ loginUser.memState eq '1' }">
+          <a href="contactUpdate.co" data-toggle="modal">Edit Contact</a>
+        </c:if>
       </div>
 
     </div>
@@ -78,26 +81,26 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>2580 Burrard St, Vancouver, BC V6J 3J7 Canada</p>
+                <p>${c.conLocation}</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>ericarica@gmail.com</p>
+                <p>${c.conEmail}</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>010 4435 0116</p>
+                <p>${c.conPhone}</p>
               </div>
 
             </div>
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+          <!-- <div class="col-lg-8 mt-5 mt-lg-0">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
@@ -122,7 +125,7 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
 
-          </div>
+          </div> -->
 
         </div>
 
