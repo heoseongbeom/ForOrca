@@ -98,11 +98,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.me">About</a></li>
+          <li><a href="about.ab">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
           <li><a class="active" href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
+          <li><a href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -125,7 +125,7 @@
 			<br><br><br>
 			<form action="portfolioInsert.po" method="post" enctype="multipart/form-data">
 				<h4>Photo</h4>
-				<input type="file" name="upfile" class="input">
+				<input type="file" name="upfile" class="input" id="photo">
 				<br><br><br><br>
 
 				<h4>Photo Text</h4>
@@ -147,14 +147,13 @@
 			<!-- Select Option 선택 안했을시 alert창 띄우기 -->
 			<script>
 				function port(){
+
+					var selectedUpfile = $('#photo').val();
 					var selectedOption = $('#portSelect').val();
-					console.log(selectedOption);
-					console.log('준비');
-					
-						console.log("진행중");
-						if (selectedOption == "") {
+
+					if (selectedUpfile == "") {
 							Swal.fire({
-							text: "Please select an option.",
+							text: "Please select an file.",
 							allowOutsideClick: false,
 							showConfirmButton: true,
 							closeOnConfirm: true,
@@ -165,11 +164,31 @@
 							inputType: 'text',
 							showLoaderOnConfirm: true
 							});
-							console.log('완료');
+							console.log('파일 완료');
 						return false;
 						}else{
 							return true;
 						}
+					
+						
+					if (selectedOption == "") {
+						Swal.fire({
+						text: "Please select an option.",
+						allowOutsideClick: false,
+						showConfirmButton: true,
+						closeOnConfirm: true,
+						confirmButtonText: 'OK',
+						confirmButtonColor: 'slategray',
+						animation: true,
+						allowEscapeKey: true,
+						inputType: 'text',
+						showLoaderOnConfirm: true
+						});
+						console.log('완료');
+					return false;
+					}else{
+						return true;
+					}
 				};
 
 			
