@@ -36,11 +36,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a  href="mainPage.me">Home</a></li>
-          <li><a class="active" href="about.me">About</a></li>
+          <li><a class="active" href="about.ab">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
           <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
+          <li><a href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -49,7 +49,7 @@
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
 		<a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
         <c:if test="${ loginUser.memState eq '1' }">
-        	<a href="aboutUpdateForm.me" data-toggle="modal">Update Page</a>
+        	<a href="aboutUpdateForm.ab" data-toggle="modal">Update Page</a>
         </c:if>
       </div>
 
