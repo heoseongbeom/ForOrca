@@ -25,6 +25,16 @@ public class PortfolioDao {
 		return sqlSession.selectOne("portfolioMapper.selectPortfolioUpdateForm", portNo);
 	}
 	
+	// portfolioUpdateForm update 구문
+	public int updatePortfolio(Portfolio p, SqlSessionTemplate sqlSession) {
+		return sqlSession.update("portfolioMapper.updatePortfolio", p);
+	}
+	
+	// portfolio delete 구문
+	public int deletePortfolio(int portNo, SqlSessionTemplate sqlSession) {
+		return sqlSession.delete("portfolioMapper.deletePortfolio", portNo);
+	}
+	
 	
 
 }
