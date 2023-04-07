@@ -35,4 +35,16 @@ public class PortfolioServiceImpl implements PortfolioService{
 	public Portfolio selectPortfolioUpdateForm(int portNo) {
 		return pDao.selectPortfolioUpdateForm(portNo, sqlSession);
 	}
+	
+	// portfolioUpdateForm update 기능
+	@Override
+	public int updatePortfolio(Portfolio p) {
+		return pDao.updatePortfolio(p, sqlSession);
+	}
+	
+	// portfolio delete 기능
+	@Override
+	public int deletePortfolio(int portNo) {
+		return pDao.deletePortfolio(portNo, sqlSession);
+	}
 }
