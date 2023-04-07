@@ -53,206 +53,205 @@
 </head>
 <body>
 	
-	<form action="aboutUpdate.me" method="post" enctype="multipart/form-data">
+	<form action="aboutUpdate.ab" method="post" enctype="multipart/form-data">
 	<!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+	<header id="header" class="fixed-top">
+		<div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="mainPage.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+			<h1 class="logo me-auto me-lg-0"><a href="mainPage.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a  href="mainPage.me">Home</a></li>
-          <li><a class="active" href="about.me">About</a></li>
-          <li><a href="schedule.me">Schedule</a></li>
-          <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+			<nav id="navbar" class="navbar order-last order-lg-0">
+			<ul>
+				<li><a  href="mainPage.me">Home</a></li>
+				<li><a class="active" href="about.ab">About</a></li>
+				<li><a href="schedule.me">Schedule</a></li>
+				<li><a href="finance.me">Finance</a></li>
+				<li><a href="portfolio.po">Portfolio</a></li>
+				<li><a href="contact.co">Contact</a></li>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav><!-- .navbar -->
 
-      <div class="header-social-links">
-        <button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
-		&nbsp;&nbsp;&nbsp;
-        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>		
-      </div>
+			<div class="header-social-links">
+			<button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
+			&nbsp;&nbsp;&nbsp;
+			<a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>		
+			</div>
 
-    </div>
+		</div>
 
-</header><!-- End Header -->
+	</header><!-- End Header -->
 
 
 	<main id="main">
-			<!-- ======= About Section ======= -->
-			<section id="about" class="about">
-				<div class="container" data-aos="fade-up">
-					<div class="section-title">
-						<h2>About</h2>
+		<!-- ======= About Section ======= -->
+		<section id="about" class="about">
+			<div class="container" data-aos="fade-up">
+				<div class="section-title">
+					<h2>About</h2>
+					<p>
+						<textarea class="form-control" name="aboutIntroOne" id="" cols="90" rows="5" style="text-align: center;">${ a.aboutIntroOne }</textarea>
+					</p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<img src="${ a.aboutProfileChangeImg }" class="img-fluid" alt="">
+						<input type="file" class="form-control" name="upfile" style="width: 300px;">
+					</div>
+					<div class="col-lg-8 pt-4 pt-lg-0 content">
+						<h3>Tattooist</h3>
+						<p class="fst-italic">
+							<textarea class="form-control" name="aboutTattooist" id="" cols="100" rows="5">${ a.aboutTattooist }</textarea>
+						</p>
+						<div class="row">
+							<div class="col-lg-6">
+								<ul>
+									<li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> <input type="text" name="aboutBirthday" class="form-control" value="${ a.aboutBirthday }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>Website:</strong> <input type="text" name="aboutWebsite" class="form-control" value="${ a.aboutWebsite }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> <input type="text" name="aboutPhone" class="form-control" value="${ a.aboutPhone }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>City:</strong> <input type="text" name="aboutCity" class="form-control" value="${ a.aboutCity }"></li>
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul>
+									<li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> <input type="text" name="aboutAge" class="form-control" value="${ a.aboutAge }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> <input type="text" name="aboutDegree" class="form-control" value="${ a.aboutDegree }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> <input type="text" name="aboutEmail" class="form-control" value="${ a.aboutEmail }"></li>
+									<li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> <input type="text" name="aboutFreelance" class="form-control" value="${ a.aboutFreelance }"></li>
+								</ul>
+							</div>
+						</div>
 						<p>
-							<textarea class="form-control" name="aboutIntroOne" id="" cols="90" rows="5" style="text-align: center;">${ a.aboutIntroOne }</textarea>
+							<textarea class="form-control" name="aboutIntroTwo" id="" cols="100" rows="7">${ a.aboutIntroTwo }</textarea>
 						</p>
 					</div>
-
-					<div class="row">
-						<div class="col-lg-4">
-							<img src="${ a.aboutProfileChangeImg }" class="img-fluid" alt="">
-							<input type="file" class="form-control" name="upfile" style="width: 300px;">
-						</div>
-						<div class="col-lg-8 pt-4 pt-lg-0 content">
-							<h3>Tattooist</h3>
-							<p class="fst-italic">
-								<textarea class="form-control" name="aboutTattooist" id="" cols="100" rows="5">${ a.aboutTattooist }</textarea>
-							</p>
-							<div class="row">
-								<div class="col-lg-6">
-									<ul>
-										<li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> <input type="text" name="aboutBirthday" class="form-control" value="${ a.aboutBirthday }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>Website:</strong> <input type="text" name="aboutWebsite" class="form-control" value="${ a.aboutWebsite }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> <input type="text" name="aboutPhone" class="form-control" value="${ a.aboutPhone }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>City:</strong> <input type="text" name="aboutCity" class="form-control" value="${ a.aboutCity }"></li>
-									</ul>
-								</div>
-								<div class="col-lg-6">
-									<ul>
-										<li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> <input type="text" name="aboutAge" class="form-control" value="${ a.aboutAge }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> <input type="text" name="aboutDegree" class="form-control" value="${ a.aboutDegree }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> <input type="text" name="aboutEmail" class="form-control" value="${ a.aboutEmail }"></li>
-										<li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> <input type="text" name="aboutFreelance" class="form-control" value="${ a.aboutFreelance }"></li>
-									</ul>
-								</div>
-							</div>
-							<p>
-								<textarea class="form-control" name="aboutIntroTwo" id="" cols="100" rows="7">${ a.aboutIntroTwo }</textarea>
-							</p>
-						</div>
-					</div>
-
 				</div>
-			</section><!-- End About Section -->
+			</div>
+		</section><!-- End About Section -->
 		
-			<!-- ======= Skills Section ======= -->
-			<section id="skills" class="skills">
-				<div class="container" data-aos="fade-up">
+		<!-- ======= Skills Section ======= -->
+		<section id="skills" class="skills">
+			<div class="container" data-aos="fade-up">
 
-					<div class="section-title">
-						<h2>Skills</h2>
-						<p>
-							<textarea class="form-control" name="aboutSkills" id="" cols="80" rows="2" style="text-align: center;">${ a.aboutSkills }</textarea>
-						</p>
+				<div class="section-title">
+					<h2>Skills</h2>
+					<p>
+						<textarea class="form-control" name="aboutSkills" id="" cols="80" rows="2" style="text-align: center;">${ a.aboutSkills }</textarea>
+					</p>
+				</div>
+
+				<div class="row skills-content">
+
+					<div class="col-lg-6">
+
+					<div class="progress">
+						<input type="text" name="aboutSkillsOne" class="form-control" value="${ a.aboutSkillsOne }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
+						<input type="text" name="aboutSkillsOnePer" class="form-control" value="${ a.aboutSkillsOnePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<span class="skill"><i class="val"></i></span>
+						<div class="progress-bar-wrap">
+							<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
 					</div>
 
-					<div class="row skills-content">
-
-						<div class="col-lg-6">
-
-						<div class="progress">
-							<input type="text" name="aboutSkillsOne" class="form-control" value="${ a.aboutSkillsOne }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
-							<input type="text" name="aboutSkillsOnePer" class="form-control" value="${ a.aboutSkillsOnePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<span class="skill"><i class="val"></i></span>
-							<div class="progress-bar-wrap">
-								<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
+					<div class="progress">
+						<input type="text" class="form-control" name="aboutSkillsTwo" value="${ a.aboutSkillsTwo }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<input type="text" class="form-control" name="aboutSkillsTwoPer" value="${ a.aboutSkillsTwoPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
+						<span class="skill"><i class="val"></i></span>
+						<div class="progress-bar-wrap">
+						<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
+					</div>
 
-						<div class="progress">
-							<input type="text" class="form-control" name="aboutSkillsTwo" value="${ a.aboutSkillsTwo }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<input type="text" class="form-control" name="aboutSkillsTwoPer" value="${ a.aboutSkillsTwoPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
-							<span class="skill"><i class="val"></i></span>
-							<div class="progress-bar-wrap">
+					<div class="progress">
+						<input type="text" class="form-control" name="aboutSkillsThree" value="${ a.aboutSkillsThree }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
+						<input type="text" class="form-control" name="aboutSkillsThreePer" value="${ a.aboutSkillsThreePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<span class="skill"><i class="val"></i></span>
+						<div class="progress-bar-wrap">
+						<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+
+					</div>
+
+					<div class="col-lg-6">
+
+					<div class="progress">
+						<input type="text" class="form-control" name="aboutSkillsFour" value="${ a.aboutSkillsFour }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
+						<input type="text" class="form-control" name="aboutSkillsFourPer" value="${ a.aboutSkillsFourPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<span class="skill"> <i class="val"></i></span>
+						<div class="progress-bar-wrap">
+							<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="progress">
+						<input type="text" class="form-control" name="aboutSkillsFive" value="${ a.aboutSkillsFive }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<input type="text" class="form-control" name="aboutSkillsFivePer" value="${ a.aboutSkillsFivePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<span class="skill"> <i class="val"></i></span>
+						<div class="progress-bar-wrap">
 							<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
 						</div>
+					</div>
 
-						<div class="progress">
-							<input type="text" class="form-control" name="aboutSkillsThree" value="${ a.aboutSkillsThree }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
-							<input type="text" class="form-control" name="aboutSkillsThreePer" value="${ a.aboutSkillsThreePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<span class="skill"><i class="val"></i></span>
-							<div class="progress-bar-wrap">
-							<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
+					<div class="progress">
+						<input type="text" class="form-control" name="aboutSkillsSix" placeholder="${ a.aboutSkillsSix }" value="${ a.aboutSkillsSix }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
+						<input type="text" class="form-control" name="aboutSkillsSixPer" value="${ a.aboutSkillsSixPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
+						<span class="skill"><i class="val"></i></span>
+						<div class="progress-bar-wrap">
+							<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
-
-						</div>
-
-						<div class="col-lg-6">
-
-						<div class="progress">
-							<input type="text" class="form-control" name="aboutSkillsFour" value="${ a.aboutSkillsFour }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
-							<input type="text" class="form-control" name="aboutSkillsFourPer" value="${ a.aboutSkillsFourPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<span class="skill"> <i class="val"></i></span>
-							<div class="progress-bar-wrap">
-								<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</div>
-						<div class="progress">
-							<input type="text" class="form-control" name="aboutSkillsFive" value="${ a.aboutSkillsFive }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<input type="text" class="form-control" name="aboutSkillsFivePer" value="${ a.aboutSkillsFivePer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<span class="skill"> <i class="val"></i></span>
-							<div class="progress-bar-wrap">
-								<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</div>
-
-						<div class="progress">
-							<input type="text" class="form-control" name="aboutSkillsSix" placeholder="${ a.aboutSkillsSix }" value="${ a.aboutSkillsSix }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;">
-							<input type="text" class="form-control" name="aboutSkillsSixPer" value="${ a.aboutSkillsSixPer }" style="padding: 0rem; padding-left: 0.2rem; text-align: center;"> 
-							<span class="skill"><i class="val"></i></span>
-							<div class="progress-bar-wrap">
-								<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</div>
-
-						</div>
+					</div>
 
 					</div>
 
 				</div>
-			</section><!-- End Skills Section -->
 
-			<!-- ======= Facts Section ======= -->
-			<section id="facts" class="facts">
-				<div class="container" data-aos="fade-up">
+			</div>
+		</section><!-- End Skills Section -->
 
-					<div class="section-title">
-						<h2>Facts</h2>
-						<p>
-							<textarea class="form-control" name="aboutFacts" id="" cols="90" rows="2" style="text-align: center;">${ a.aboutFacts }</textarea>
-						</p>
+		<!-- ======= Facts Section ======= -->
+		<section id="facts" class="facts">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>Facts</h2>
+					<p>
+						<textarea class="form-control" name="aboutFacts" id="" cols="90" rows="2" style="text-align: center;">${ a.aboutFacts }</textarea>
+					</p>
+				</div>
+
+				<div class="row counters">
+
+					<div class="col-lg-3 col-6 text-center">
+					<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsOne }" data-purecounter-duration="1" class="purecounter"></span>
+					<input type="text" class="form-control" name="aboutFactsOne" value="${ a.aboutFactsOne }" style="text-align: center;">
+					<p><input type="text" class="form-control" name="aboutFactsOneText" value="${ a.aboutFactsOneText }" style="text-align: center;"></p>
 					</div>
 
-					<div class="row counters">
+					<div class="col-lg-3 col-6 text-center">
+					<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsTwo }" data-purecounter-duration="1" class="purecounter"></span>
+					<input type="text" class="form-control" name="aboutFactsTwo" value="${ a.aboutFactsTwo }" style="text-align: center;">
+					<p><input type="text" class="form-control" name="aboutFactsTwoText" value="${ a.aboutFactsTwoText }" style="text-align: center;"></p>
+					</div>
 
-						<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsOne }" data-purecounter-duration="1" class="purecounter"></span>
-						<input type="text" class="form-control" name="aboutFactsOne" value="${ a.aboutFactsOne }" style="text-align: center;">
-						<p><input type="text" class="form-control" name="aboutFactsOneText" value="${ a.aboutFactsOneText }" style="text-align: center;"></p>
-						</div>
+					<div class="col-lg-3 col-6 text-center">
+					<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsThree }" data-purecounter-duration="1" class="purecounter"></span>
+					<input type="text" class="form-control" name="aboutFactsThree" value="${ a.aboutFactsThree }" style="text-align: center;">
+					<p><input type="text" class="form-control" name="aboutFactsThreeText" value="${ a.aboutFactsThreeText }" style="text-align: center;"></p>
+					</div>
 
-						<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsTwo }" data-purecounter-duration="1" class="purecounter"></span>
-						<input type="text" class="form-control" name="aboutFactsTwo" value="${ a.aboutFactsTwo }" style="text-align: center;">
-						<p><input type="text" class="form-control" name="aboutFactsTwoText" value="${ a.aboutFactsTwoText }" style="text-align: center;"></p>
-						</div>
-
-						<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsThree }" data-purecounter-duration="1" class="purecounter"></span>
-						<input type="text" class="form-control" name="aboutFactsThree" value="${ a.aboutFactsThree }" style="text-align: center;">
-						<p><input type="text" class="form-control" name="aboutFactsThreeText" value="${ a.aboutFactsThreeText }" style="text-align: center;"></p>
-						</div>
-
-						<div class="col-lg-3 col-6 text-center">
-						<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsFour }" data-purecounter-duration="1" class="purecounter"></span>
-						<input type="text" class="form-control" name="aboutFactsFour" value="${ a.aboutFactsFour }" style="text-align: center;">
-						<p><input type="text" class="form-control" name="aboutFactsFourText" value="${ a.aboutFactsFourText }" style="text-align: center;"></p>
-						</div>
-
+					<div class="col-lg-3 col-6 text-center">
+					<span data-purecounter-start="0" data-purecounter-end="${ a.aboutFactsFour }" data-purecounter-duration="1" class="purecounter"></span>
+					<input type="text" class="form-control" name="aboutFactsFour" value="${ a.aboutFactsFour }" style="text-align: center;">
+					<p><input type="text" class="form-control" name="aboutFactsFourText" value="${ a.aboutFactsFourText }" style="text-align: center;"></p>
 					</div>
 
 				</div>
-			</section><!-- End Facts Section -->
+
+			</div>
+		</section><!-- End Facts Section -->
 			
 			<!-- ======= Testimonials Section ======= 
 			<section id="testimonials" class="testimonials">
