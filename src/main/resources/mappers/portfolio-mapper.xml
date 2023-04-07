@@ -54,6 +54,27 @@
 		where port_no = #{portNo}
 	</select>
 	
+	<!-- portfolioUpdateForm 페이지 update 기능 -->
+	<update id="updatePortfolio">
+		update
+		       portfolio
+		   set port_text = #{portText}
+		     , port_origin_photo = #{portOriginPhoto}
+		     , port_change_photo = #{portChangePhoto}
+		     , port_category = #{portCategory}
+		 where port_no = #{portNo}
+	</update>
+	
+	<!-- portfolio 페이지 delete 기능 -->
+	<delete id="deletePortfolio">
+		delete
+		  from portfolio
+		 where port_no = #{portNo}
+	</delete>
+	
+	
+	
+	
 	
 	
 	
