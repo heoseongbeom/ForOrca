@@ -70,11 +70,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="active" href="mainPage.me">Home</a></li>
-          <li><a href="about.me">About</a></li>
+          <li><a href="about.ab">About</a></li>
           <li><a href="schedule.me">schedule</a></li>
           <li><a href="finance.me">finance</a></li>
-          <li><a href="portfolio.me">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
+          <li><a href="portfolio.po">Portfolio</a></li>
+          <li><a href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
