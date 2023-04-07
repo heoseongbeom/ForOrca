@@ -40,11 +40,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.me">About</a></li>
+          <li><a href="about.ab">About</a></li>
           <li><a href="schedule.me">Schedule</a></li>
           <li><a href="finance.me">Finance</a></li>
           <li><a class="active" href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.me">Contact</a></li>
+          <li><a href="contact.co">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -66,7 +66,7 @@
 	<main id="main">
 
 		<!-- ======= Portfolio Section ======= -->
-		<section id="portfolio" class="portfolio">
+		<section id="portfolio" class="portfolio" style="height: 80vh;">
 			<div class="container" data-aos="fade-up">
 	
 				<div class="section-title">
@@ -90,8 +90,9 @@
 
 					<c:choose>
 						<c:when test="${ empty list }">
-							<div class="portfolio-wrap">
-								<h2>Empty Photo</h2>
+							<div class="" >
+								<br><br><br><br><br>
+								<h1 style="text-align-last: center;">Empty Photo</h1>
 							</div>
 						</c:when>
 						<c:otherwise>
@@ -106,9 +107,46 @@
 												<a href="${ p.portChangePhoto }" data-gallery="portfolioGallery" class="portfolio-lightbox" title="${ p.portText }"><i class="bx bx-plus"></i></a>
 												<c:if test="${ loginUser.memState eq '1' }">
 													<a href="portfolioUpdateForm.po?no=${p.portNo}" title="Edit" class="updatePort"><i class="fas fa-pencil" style="font-size: smaller;"></i></a>&nbsp;&nbsp;
-													<a href="portfolioDelete.po" title="Delete"><i class="fa-regular fa-trash-can" style="font-size: smaller;"></i></a>
+													<a onclick="deletePort();" title="Delete"><i class="fa-regular fa-trash-can" style="font-size: smaller;"></i></a>
 												</c:if>
+												<input type="hidden" class="deletePort" value="${p.portNo}">
 												<!--<a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>-->
+												<script>
+													function deletePort(){
+														Swal.fire({
+														text: "정말 삭제하시겠습니까?",
+														allowOutsideClick: true,
+														showConfirmButton: true,
+														showCancelButton: true,
+														closeOnConfirm: true,
+														closeOnCancel: true,
+														confirmButtonText: 'OK',
+														confirmButtonColor: 'slategray',
+														cancelButtonText: 'Cancel',
+														imageUrl: null,
+														imageSize: null,
+														timer: null,
+														customClass: '',
+														html: false,
+														animation: true,
+														allowEscapeKey: true,
+														inputType: 'text',
+														inputPlaceholder: '',
+														inputValue: '',
+														showLoaderOnConfirm: false
+														}).then((result) => {
+															if (result.isConfirmed) {
+																location.href = 'portfolioDelete.po?no=' + $('.deletePort').val();
+															}
+														});
+														
+														// if($('.swal2-confirm swal2-styled').click()){
+														// 	location.href = 'portfolioDelete.po?no=' + $('.deletePort').val();
+														// }else{
+														// 	false;
+														// }
+													}
+												</script>
 											</div>
 										</div>
 									</div>
@@ -133,7 +171,6 @@
 		  <!-- You can delete the links only if you purchased the pro version. -->
 		  <!-- Licensing information: https://bootstrapmade.com/license/ -->
 		  <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ -->
-		  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 		</div>
 	  </div>
 
