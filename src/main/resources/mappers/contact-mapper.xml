@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="contactMapper">
+
+	<resultMap id="contactResult" type="Contact">
+		<result column="con_location" property="conLocation" />
+		<result column="con_email" property="conEmail" />
+		<result column="con_phone" property="conPhone" />
+	</resultMap>
+	
+	<!-- contact 페이지 select 기능 -->
+	<select id="selectContact" resultMap="contactResult">
+		select 
+		       con_location
+		     , con_email
+		     , con_phone
+		  from contact
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>
