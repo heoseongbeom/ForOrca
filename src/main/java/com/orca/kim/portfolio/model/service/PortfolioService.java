@@ -14,5 +14,11 @@ public interface PortfolioService {
 	
 	// portfolioUpdateForm 페이지 select 기능
 	Portfolio selectPortfolioUpdateForm(int portNo );
+	
+	// portfolioUpdateForm 페이지 update 기능
+	int updatePortfolio(Portfolio p);
+	
+	// portfolio delete 기능
+	int deletePortfolio(int portNo);
 
 }
