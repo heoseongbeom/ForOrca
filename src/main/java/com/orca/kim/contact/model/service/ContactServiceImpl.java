@@ -16,9 +16,15 @@ public class ContactServiceImpl implements ContactService{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
+	// contact 페이지 select 기능
 	@Override
 	public Contact selectContact() {
 		return cDao.selectContact(sqlSession);
+	}
+	
+	@Override
+	public int updateContact(Contact c) {
+		return cDao.updateContact(c, sqlSession);
 	}
 
 }
