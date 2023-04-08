@@ -17,6 +17,13 @@
 		  from contact
 	</select>
 	
+	<update id="updateContact">
+		update
+		       contact
+		   set con_location = #{conLocation}
+		     , con_email = #{conEmail}
+		     , con_phone = #{conPhone}
+	</update>
 	
 	
 	
