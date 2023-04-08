@@ -12,5 +12,10 @@ public class ContactDao {
 	public Contact selectContact(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("contactMapper.selectContact");
 	}
+	
+	// contactUpdate 페이지 update 기능
+	public int updateContact(Contact c, SqlSessionTemplate sqlSession) {
+		return sqlSession.update("contactMapper.updateContact", c);
+	}
 
 }
