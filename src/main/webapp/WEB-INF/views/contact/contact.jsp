@@ -51,7 +51,7 @@
         <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
 		    &nbsp;
         <c:if test="${ loginUser.memState eq '1' }">
-          <a href="contactUpdate.co" data-toggle="modal">Edit Contact</a>
+          <a href="contactUpdateForm.co" data-toggle="modal">Edit Contact</a>
         </c:if>
       </div>
 
