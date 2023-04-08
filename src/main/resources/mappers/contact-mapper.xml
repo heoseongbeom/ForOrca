@@ -17,6 +17,7 @@
 		  from contact
 	</select>
 	
+	<!-- contactUpdate 페이지 update 기능 -->
 	<update id="updateContact">
 		update
 		       contact
