@@ -161,7 +161,7 @@
 				</c:choose>
 				  </select>
 				  <br><br><br>
-				<button type="submit" class="btn" onclick="return editPort();" id="submitPort">Edit Complete</button>&nbsp;&nbsp;
+				<button type="submit" class="btn">Edit Complete</button>&nbsp;&nbsp;
 				<button type="button" class="btn" onclick="cancel();" style="background-image: linear-gradient(90deg, #7b7e80 0%, #687576 74%);">Cancel</button>
 			</form>
 			
