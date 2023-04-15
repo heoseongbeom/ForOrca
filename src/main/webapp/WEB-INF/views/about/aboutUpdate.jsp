@@ -66,7 +66,7 @@
 			<ul>
 				<li><a  href="mainPage.me">Home</a></li>
 				<li><a class="active" href="about.ab">About</a></li>
-				<li><a href="schedule.me">Schedule</a></li>
+				<li><a href="schedule.sc">Schedule</a></li>
 				<li><a href="finance.me">Finance</a></li>
 				<li><a href="portfolio.po">Portfolio</a></li>
 				<li><a href="contact.co">Contact</a></li>

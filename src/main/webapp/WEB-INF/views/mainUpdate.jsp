@@ -71,7 +71,7 @@
         <ul>
           <li><a class="active" href="mainPage.me">Home</a></li>
           <li><a href="about.ab">About</a></li>
-          <li><a href="schedule.me">schedule</a></li>
+          <li><a href="schedule.sc">schedule</a></li>
           <li><a href="finance.me">finance</a></li>
           <li><a href="portfolio.po">Portfolio</a></li>
           <li><a href="contact.co">Contact</a></li>
