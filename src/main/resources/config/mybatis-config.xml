@@ -13,6 +13,7 @@
 		<typeAlias type="com.orca.kim.about.model.vo.About" alias="About" />
 		<typeAlias type="com.orca.kim.portfolio.model.vo.Portfolio" alias="Portfolio" />
 		<typeAlias type="com.orca.kim.contact.model.vo.Contact" alias="Contact" />
+		<typeAlias type="com.orca.kim.schedule.model.vo.Schedule" alias="Schedule" />
 	</typeAliases>
 	<!-- 유의사항 : 미리등록해두려면 해당 클래스가 진짜 존재해야 함 -->
 	
@@ -28,6 +29,7 @@
 		<mapper resource="/mappers/about-mapper.xml" />
 		<mapper resource="/mappers/portfolio-mapper.xml" />
 		<mapper resource="/mappers/contact-mapper.xml" />
+		<mapper resource="/mappers/schedule-mapper.xml" />
 	 </mappers>
 	 <!-- 유의사항 : 미리등록해두려면 해당 mapper 파일이 진짜 존재해야 함 (뿐만 아니라 namespace까지도 지정되어있어야 함) -->
 	
