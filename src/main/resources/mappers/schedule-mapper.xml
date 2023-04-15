@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="scheduleMapper">
+
+	<resultMap id="scheduleResult" type="Schedule">
+		<result column="sche_no" property="scheNo" />
+		<result column="sche_title" property="scheTitle" />
+		<result column="sche_description" property="scheDescription" />
+		<result column="sche_date_start" property="scheDateStart" />
+		<result column="sche_date_end" property="scheDateEnd" />
+		<result column="sche_color" property="scheColor" />
+		<result column="sche_status" property="scheStatus" />
+		<result column="sche_status_exp" property="scheStatusExp" />
+	</resultMap>
+	
+	<!-- schedule 페이지 fullcalendar select 기능 -->
+	<select id="ajaxSelectScheduleList" resultMap="scheduleResult">
+		select
+			   sche_no
+			 , sche_title
+			 , sche_description
+			 , sche_date_start
+			 , sche_date_end
+			 , sche_color
+			 , sche_status
+			 , sche_status_exp
+	      from schedule 
+	</select>
+
+</mapper>
