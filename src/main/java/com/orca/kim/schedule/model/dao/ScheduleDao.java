@@ -15,6 +15,11 @@ public class ScheduleDao {
 		return (ArrayList)sqlSession.selectList("scheduleMapper.ajaxSelectScheduleList");
 	}
 	
+	// schedule 페이지 insert
+	public int insertSchedule(Schedule s, SqlSessionTemplate sqlSession) {
+		return sqlSession.insert("scheduleMapper.insertSchedule", s);
+	}
+	
 	// schedule 페이지 eventDrop ajax
 	public int scheduleDropAjax(Schedule s, SqlSessionTemplate sqlSession) {
 		return sqlSession.update("scheduleMapper.scheduleDropAjax", s);
