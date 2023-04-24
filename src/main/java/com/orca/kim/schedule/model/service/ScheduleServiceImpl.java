@@ -24,6 +24,12 @@ public class ScheduleServiceImpl implements ScheduleService{
 		return sDao.ajaxSelectScheduleList(sqlSession);
 	}
 	
+	// schedule 페이지 insert
+	@Override
+	public int insertSchedule(Schedule s) {
+		return sDao.insertSchedule(s, sqlSession);
+	}
+	
 	// schedule 페이지 eventDrop
 	@Override
 	public int scheduleDropAjax(Schedule s) {
