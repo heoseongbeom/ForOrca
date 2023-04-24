@@ -53,6 +53,21 @@ public class ScheduleController {
 		return mapList;
 	}
 	
+	// schedule 페이지 insert 컨트롤러
+	@RequestMapping("schduleInsert.sc")
+	public String insertSchedule(Schedule s, HttpSession session) {
+		int result = sService.insertSchedule(s);
+		System.out.println(s);
+		if(result > 0) {
+			session.setAttribute("alertTitle", "Registration Complete");
+			session.setAttribute("alertMsg", "일정 등록 성공");
+		}else {
+			session.setAttribute("alertTitle", "Registration Fail");
+			session.setAttribute("alertMsg", "일정 등록 실패");
+		}
+		return "redirect:schedule.sc";
+	}
+	
 	// schedule 페이지 eventDrop ajax 컨트롤러
 	@ResponseBody
 	@RequestMapping(value="scheduleDropAjax.sc", produces="application/json; charset=UTF-8")
