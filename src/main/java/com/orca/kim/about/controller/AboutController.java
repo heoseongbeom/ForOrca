@@ -130,7 +130,7 @@ public class AboutController {
 		if(result > 0) {
 			session.setAttribute("alertTitle", "수정 완료");
 			session.setAttribute("alertMsg", "Update Complete");
-			return "redirect:about.me";
+			return "redirect:about.ab";
 		}else {
 			session.setAttribute("alertMsg", "Update Fail");
 			return "redirect/";
