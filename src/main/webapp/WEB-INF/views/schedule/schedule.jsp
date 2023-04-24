@@ -165,12 +165,11 @@
           <h4>Add Event Detail</h4>        
             <div class="form-group">
               <label>Event name</label>
-              <input type="text" class="form-control" name="scheName">
-              <input type="hidden" name="scheNo" id="scheduleNo">
+              <input type="text" class="form-control" name="scheTitle">
             </div>
             <div class="form-group">
               <label>Event Date</label>
-              <input type='text' class="datetimepicker form-control" id="scheDate" name="scheDate">
+              <input type="text" class="datetimepicker form-control" id="scheDate" name="scheDate" style="background: white;" readonly>
               <input type="hidden" name="scheDateStart" id="scheDateStart">
               <input type="hidden" name="scheDateEnd" id="scheDateEnd">
             </div>        
@@ -197,7 +196,7 @@
             </div>
             <div class="form-group">
               <label>Event Status Exp</label>
-              <input type='text' class="datetimepicker form-control" name="scheStatusExp">
+              <input type='text' class="form-control" name="scheStatusExp">
             </div>        
         </div>
           <div class="modal-footer">
@@ -223,7 +222,7 @@
             </div>
             <div class="form-group">
               <label>Event Date</label>
-              <input type='text' class="datetimepicker form-control" id="scheEditDate" name="scheDate">
+              <input type="text" class="datetimepicker form-control" id="scheEditDate" name="scheDate">
               <input type="hidden" name="scheDateStart" id="scheEditDateStart">
               <input type="hidden" name="scheDateEnd" id="scheEditDateEnd">
             </div>        
@@ -250,8 +249,9 @@
             </div>
             <div class="form-group">
               <label>Event Status Exp</label>
-              <input type='text' class="datetimepicker form-control" name="scheStatusExp" id="scheEditExp">
-            </div>        
+              <input type="text" class="form-control" name="scheStatusExp" id="scheEditExp">
+            </div>
+                   
         </div>
           <div class="modal-footer">
           <button type="submit" class="btn btn-primary" >Submit</button>
@@ -261,6 +261,8 @@
       </div>
     </div>
   </div>
+  
+  
 
 
 
@@ -281,7 +283,6 @@
         });
 
         $("#add-event").submit(function(){
-          alert("Submitted");
           var values = {};
           $.each($('#add-event').serializeArray(), function(i, field) {
           values[field.name] = field.value;
@@ -289,6 +290,11 @@
           console.log(
           values
           );
+        });
+
+        // 모달 hide시 기존에 입력했던 값 초기화
+        $('#modal-view-event-add').on('hidden.bs.modal', function () {
+          $(this).find('form').trigger('reset');
         });
 
         // 모달 hide
@@ -307,7 +313,6 @@
         $('#closeBtn3').on('click', function(){
           $('#modal-view-event-edit').modal('hide');
         });
-
 
       });
 
