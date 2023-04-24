@@ -9,6 +9,9 @@ public interface ScheduleService {
 	// schedule 페이지 fullcaledar 일정 조회  
 	ArrayList<Schedule> ajaxSelectScheduleList();
 	
+	// schedule 페이지 insert
+	int insertSchedule(Schedule s);
+	
 	// schedule 페이지 dropEvent ajax
 	int scheduleDropAjax(Schedule s);
 	
