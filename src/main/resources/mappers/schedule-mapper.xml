@@ -26,5 +26,56 @@
 			 , sche_status_exp
 	      from schedule 
 	</select>
-
+	
+	<insert id="insertSchedule">
+		insert 
+		  into schedule
+		  (
+		    sche_no
+		  , sche_title
+		  , sche_description
+		  , sche_date_start
+		  , sche_date_end
+		  , sche_color
+		  , sche_status
+		  , sche_status_exp
+		  )
+		  values
+		  (
+		    seq_scheno.nextval
+		  , #{scheTitle}
+		  , #{scheDescription}
+		  , #{scheDateStart}
+		  , #{scheDateEnd}
+		  , #{scheColor}
+		  , #{scheStatus}
+		  , #{scheStatusExp}
+		  )
+	</insert>
+	
+	<!-- schedule 페이지 eventDrop ajax -->
+	<update id="scheduleDropAjax">
+		update
+		       schedule
+		   set sche_date_start = #{scheDateStart}
+		     , sche_date_end = #{scheDateEnd}
+		 where sche_no = #{scheNo}
+	</update>
+	
+	
+	<!-- schedule 페이지 fullcalendar detail 수정 -->
+	<update id="updateScheduleDetail">
+		update 
+			   schedule
+		   set 
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>
