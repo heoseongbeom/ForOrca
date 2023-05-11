@@ -9,6 +9,9 @@ public interface ScheduleService {
 	// schedule 페이지 fullcaledar 일정 조회  
 	ArrayList<Schedule> ajaxSelectScheduleList();
 	
+	// scheduleClient 페이지 fullcalendar 일정 조회
+	ArrayList<Schedule> ajaxSelectScheduleClientList();
+	
 	// schedule 페이지 insert
 	int insertSchedule(Schedule s);
 	
@@ -17,4 +20,7 @@ public interface ScheduleService {
 	
 	// schedule 페이지 fullcalendar detail 수정
 	int updateScheduleDetail(Schedule s);
+	
+	// schedule 페이지 delete
+	int deleteSchedule(int scheNo);
 }
