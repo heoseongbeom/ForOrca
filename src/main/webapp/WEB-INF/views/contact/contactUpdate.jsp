@@ -5,23 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- Favicons -->
-  <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 
   <style>
     .btn {
@@ -58,26 +41,12 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <jsp:include page="../common/header.jsp" />
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.ab">About</a></li>
-          <li><a href="schedule.sc">Schedule</a></li>
-          <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a class="active" href="contact.co">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="header-social-links">
+      <div class="header-social-links" style="margin-left:100px;">
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
         &nbsp;
-        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        <a href="logout.me">Logout</a>
       </div>
 
     </div>
@@ -126,49 +95,22 @@
           </div>
           <br><br>
           <div style="text-align-last: center;">
-            <button type="submit" class="btn">Edit Complete</button>&nbsp;&nbsp;
-            <button type="button" class="btn" onclick="cancel();" style="background-image: linear-gradient(90deg, #7b7e80 0%, #687576 74%);">Cancel</button>
+            <button type="submit" class="btn" style="color:white">Edit Complete</button>&nbsp;&nbsp;
+            <button type="button" class="btn" onclick="cancel();" style="color:white; background-image: linear-gradient(90deg, #7b7e80 0%, #687576 74%);">Cancel</button>
           </div>
         </div>
-
-			<!-- cancel 버튼 클릭시 contact.jsp로 이동 -->
-			<script>
-				function cancel(){
-					location.href = 'contact.co';
-				}
-			</script>
-
-      <!-- <div class="col-lg-8 mt-5 mt-lg-0">
-
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                  </div>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
-
-            </div> -->
 
       </form>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
+
+	<!-- cancel 버튼 클릭시 contact.jsp로 이동 -->
+  <script>
+    function cancel(){
+      location.href = 'contact.co';
+    }
+  </script>
 	
 	<jsp:include page="../common/footer.jsp"/>
 
