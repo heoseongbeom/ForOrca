@@ -24,6 +24,12 @@
 	
 	<context:component-scan base-package="com.orca.kim" />
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/mainPage.me"/>
+			<beans:bean class="com.orca.kim.common.interceptor.LoginInterceptor" id="loginInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 	
 </beans:beans>
