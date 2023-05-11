@@ -15,6 +15,11 @@ public class ScheduleDao {
 		return (ArrayList)sqlSession.selectList("scheduleMapper.ajaxSelectScheduleList");
 	}
 	
+	// scheduleClient 페이지 fullcalendar 일정 조회
+	public ArrayList<Schedule> ajaxSelectScheduleClientList(SqlSessionTemplate sqlSession){
+		return (ArrayList)sqlSession.selectList("scheduleMapper.ajaxSelectScheduleClientList");
+	}
+	
 	// schedule 페이지 insert
 	public int insertSchedule(Schedule s, SqlSessionTemplate sqlSession) {
 		return sqlSession.insert("scheduleMapper.insertSchedule", s);
@@ -29,5 +34,12 @@ public class ScheduleDao {
 	public int updateScheduleDetail(Schedule s, SqlSessionTemplate sqlSession) {
 		return sqlSession.update("scheduleMapper.updateScheduleDetail", s);
 	}
+	
+	// schedule 페이지 delete
+	public int deleteSchedule(int scheNo, SqlSessionTemplate sqlSession) {
+		return sqlSession.delete("scheduleMapper.deleteSchedule", scheNo);
+	}
+	
+	
 
 }
