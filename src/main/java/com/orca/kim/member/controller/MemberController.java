@@ -58,10 +58,8 @@ public class MemberController {
 		// 회원가입 컨트롤러
 		@RequestMapping("signup.me")
 		public ModelAndView signupMember(Member m, HttpSession session, ModelAndView mv) {
-			System.out.println(m);
+
 			int result = mService.signupMember(m);
-			
-			//Member rm = mService.loginMember();
 			
 			if(result > 0) {
 				session.setAttribute("alertTitle", "회원가입 성공");
@@ -101,7 +99,7 @@ public class MemberController {
 		// 메인페이지 수정 기능
 		@RequestMapping("updateMain.me")
 		public String updateMain(MainPage mp, MultipartFile upfile, HttpSession session, Model model) {
-			System.out.println(mp);
+
 			// 새로 넘어온 첨부파일이 있을 경우
 			if(!upfile.getOriginalFilename().equals("")) {
 				
@@ -116,11 +114,8 @@ public class MemberController {
 				mp.setMainPhotoChange(saveFilePath);
 			}
 			
-			
-			System.out.println(mp);
-
 			int result = mService.updateMain(mp);
-			System.out.println(result);
+
 			if(result > 0) {
 				session.setAttribute("alertTitle", "수정 완료");
 				session.setAttribute("alertMsg", "Update Complete");
@@ -135,11 +130,14 @@ public class MemberController {
 		@ResponseBody
 		@RequestMapping(value="confirmEmail.me", produces="application/json; charset=UTF-8")
 		public String confirmEmail(String email) {
+			
 			int result = mService.confirmEmail(email);
+			
 			Map<String, Object> response = new HashMap<String, Object>();
-			System.out.println(result);
+
 			response.put("value1", email);
 			response.put("value2", result);
+			
 			return new Gson().toJson(response);
 		}
 		
@@ -152,6 +150,7 @@ public class MemberController {
 		// email 찾기 기능 컨트롤러
 		@RequestMapping("findEmail.me")
 		public String selectEmail(Member m, HttpSession session) {
+			
 			Member result = mService.selectEmail(m);
 			
 			if(result != null) {
