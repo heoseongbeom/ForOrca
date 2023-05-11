@@ -27,6 +27,18 @@
 	      from schedule 
 	</select>
 	
+	<!-- scheduleClient 페이지 fullcalendar select 기능 -->
+	<select id="ajaxSelectScheduleClientList" resultMap="scheduleResult">
+		select
+		       sche_no
+		     , sche_date_start
+		     , sche_date_end
+		     , sche_status
+		     , sche_status_exp
+		  from schedule
+	</select>
+	
+	<!-- schedule 페이지 insert 기능 -->
 	<insert id="insertSchedule">
 		insert 
 		  into schedule
@@ -67,10 +79,22 @@
 	<update id="updateScheduleDetail">
 		update 
 			   schedule
-		   set 
+		   set sche_title = #{scheTitle}
+			 , sche_description = #{scheDescription}
+			 , sche_date_start = #{scheDateStart}
+			 , sche_date_end = #{scheDateEnd}
+			 , sche_color = #{scheColor}
+			 , sche_status = #{scheStatus}
+			 , sche_status_exp = #{scheStatusExp}
+		 where sche_no = #{scheNo}
 	</update>
 	
-	
+	<!-- schedule 페이지 delete -->
+	<delete id="deleteSchedule">
+		delete
+		  from schedule
+		 where sche_no = #{scheNo}
+	</delete>
 	
 	
 	
