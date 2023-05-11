@@ -18,6 +18,7 @@ public class Portfolio {
 	private String portOriginPhoto;
 	private String portChangePhoto;
 	private String portCategory;
+	private String portDate;
 	
 
 }
