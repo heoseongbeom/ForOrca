@@ -384,9 +384,7 @@ body.swal2-height-auto{
                  inputType: 'text',
                  showLoaderOnConfirm: true
        		  });
-            console.log("ajax" + email);
             input.val(email);
-            console.log(input.val());
             // $("button[class='swal2-confirm swal2-styled']").click(function(){
             //   $('#userEmail').attr('readonly', true);
             //   $('#confirmBtn').attr('readonly', true);
@@ -407,7 +405,6 @@ body.swal2-height-auto{
                  showLoaderOnConfirm: true
        		  });
           }
-          console.log(result);
         },error:function(){
           console.log("ajax통신 실패");
           
@@ -427,7 +424,6 @@ body.swal2-height-auto{
     var email1 = $('#userEmail').val();
     var email2 = $('#userEmailCo').val();
     
-    console.log(userPwd);
     if(userPwd.length < 6){
       Swal.fire({
            text: "비밀번호를 6자리 이상 입력해주십시오.",
@@ -442,7 +438,6 @@ body.swal2-height-auto{
            showLoaderOnConfirm: true
            
        });
-       console.log("첫번째 성공");
       return false;
     }else if(userPwd != userPwdCo || userPwdCo.length < 6 ){
       Swal.fire({
@@ -458,6 +453,7 @@ body.swal2-height-auto{
            showLoaderOnConfirm: true
     });
     return false;
+
   }else if(email1 != email2){
     Swal.fire({
            text: "이메일 중복 확인을 해주십시오.",
@@ -471,8 +467,7 @@ body.swal2-height-auto{
            inputType: 'text',
            showLoaderOnConfirm: true
     });
-    console.log(email1);
-    console.log(email2);
+
     return false;
   }else if(email2 == null){
     Swal.fire({
@@ -533,7 +528,6 @@ signUpBtn.addEventListener("click", () => {
       $('.pwdInput2').css('display', 'none');
       $('.pwdInput3').css('display', 'none');
     }
-    console.log('6자리이상');
   });
 
   $('#userPwdCo').on("propertychange change keyup paste input", function(){
@@ -545,17 +539,14 @@ signUpBtn.addEventListener("click", () => {
       $('.pwdInput1').css('display','none');
       $('.pwdInput2').css('display','none');
       $('.pwdInput4').css('display', 'block');
-      console.log('비밀번호확인 6자리 미만임');
     }else if(pwd == pwdDo){
       $('.pwdInput1').css('display','block');
       $('.pwdInput2').css('display','none');
       $('.pwdInput4').css('display', 'none');
-      console.log('비밀번호 같음');
     }else{
       $('.pwdInput1').css('display','none');
       $('.pwdInput2').css('display','block');
       $('.pwdInput4').css('display', 'none');
-      console.log('dddsdwd');
     }
   });
 
@@ -568,7 +559,7 @@ signUpBtn.addEventListener("click", () => {
 
     var email = $('#userEmail').val();
     var regex = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
-    console.log(regex.test(email));
+    
     if(regex.test(email) == false){
       $('.emailInput').css('display', 'block');
     }else{
