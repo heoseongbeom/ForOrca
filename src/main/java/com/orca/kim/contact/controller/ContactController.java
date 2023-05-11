@@ -22,11 +22,8 @@ public class ContactController {
 		
 		Contact c = cService.selectContact();
 		
-		if(c != null) {
-			mv.addObject("c",c).setViewName("contact/contact");
-		}else {
-			mv.addObject("errorMsg", "페이지 조회 실패").setViewName("common/errorPage");
-		}
+		mv.addObject("c",c).setViewName("contact/contact");
+		
 		return mv;
 	}
 	
