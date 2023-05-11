@@ -29,9 +29,11 @@ public class PortfolioController {
 	// portfolio 페이지 select 컨트롤러
 	@RequestMapping("portfolio.po")
 	public ModelAndView selectPortfolio(ModelAndView mv) {
+		
 		ArrayList<Portfolio> list = pService.selectPortfolio();
+		
 		mv.addObject("list", list).setViewName("portfolio/portfolio");
-		System.out.println(list);
+
 		return mv;
 	}
 	
@@ -65,9 +67,9 @@ public class PortfolioController {
 	// portfolio updateForm 페이지 이동 컨트롤러
 	@RequestMapping("portfolioUpdateForm.po")
 	public ModelAndView updateFormPortfolio(int no, ModelAndView mv, HttpSession session) {
-		System.out.println(no);
+
 		Portfolio p = pService.selectPortfolioUpdateForm(no);
-		System.out.println(p);
+
 		if(p != null) {
 			mv.addObject("p", p).setViewName("portfolio/portfolioUpdateForm");
 		}else {
@@ -100,7 +102,7 @@ public class PortfolioController {
 		// portfolio updateForm 페이지 이동 컨트롤러
 		@RequestMapping("portfolioDelete.po")
 		public String deletePortfolio(int no, HttpSession session) {
-			System.out.println(no);
+
 			int result = pService.deletePortfolio(no);
 
 			if(result > 0) {
