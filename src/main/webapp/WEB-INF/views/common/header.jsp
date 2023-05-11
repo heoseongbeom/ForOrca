@@ -26,8 +26,23 @@
   <link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
   <!-- Template Main CSS File -->
   <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.js"></script>
+
+  <!-- Font Awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- =======================================================
   * Template Name: Kelly - v4.10.0
@@ -35,40 +50,81 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
 </head>
 <body>
 
- <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+  <c:if test="${ not empty alertMsg }">
+		<script>
+      Swal.fire({
+        title: "${alertTitle}",
+        text: "${alertMsg}",
+        allowOutsideClick: false,
+        showConfirmButton: true,
+        showCancelButton: false,
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        confirmButtonText: 'OK',
+        confirmButtonColor: 'slategray',
+        cancelButtonText: 'Cancel',
+        imageUrl: null,
+        imageSize: null,
+        timer: null,
+        customClass: '',
+        html: false,
+        animation: true,
+        allowEscapeKey: true,
+        inputType: 'text',
+        inputPlaceholder: '',
+        inputValue: '',
+        showLoaderOnConfirm: false
+      });
+		</script>
+		<c:remove var="alertMsg" scope="session" /> <!-- 일회성 메시지의 역할을 하기 위해 지워주기 -->
+		<c:remove var="alertTitle" scope="session" />
+	</c:if>
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/범고래.jpg">orca</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="active" href="main.me">Home</a></li>
-          <li><a href="about.ab">About</a></li>
-          <li><a href="schedule.me">Schedule</a></li>
-          <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.co">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+  <h1 class="logo me-auto me-lg-0"><a href="mainPage.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">ORCA</a></h1>
+  <!-- Uncomment below if you prefer to use an image logo -->
+  <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+  <nav id="navbar" class="navbar order-last order-lg-0">
+    <ul>
+      <li><a href="mainPage.me">Home</a></li>
+      <li><a href="about.ab">About</a></li>
+      <c:choose>
+        <c:when test="${ loginUser.memState eq '1' }">
+          <li><a href="schedule.sc">Schedule</a></li>
+        </c:when>
+        <c:otherwise>
+          <li><a href="scheduleClient.sc">ScheduleClient</a></li>
+        </c:otherwise>
+      </c:choose>
+      <li><a href="portfolio.po">Portfolio</a></li>
+      <li><a href="contact.co">Contact</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav><!-- .navbar -->
+  
+  <script>
+  $(document).ready(function(){
+    // 현재 URL 가져오기
+    var currentUrl = window.location.pathname;
+  
+    // 네비게이션 메뉴 아이템에 대해 반복문 수행
+    $("#navbar ul li").each(function() {
+      
+      // 메뉴 아이템의 링크 URL 가져오기
+      var menuUrl = "/ForOrca/" + $(this).children("a").attr("href");
 
-      <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-
-    </div>
-
-  </header><!-- End Header -->
-
+      // 현재 URL과 링크 URL이 일치하는 경우 'active' 클래스 추가
+      if (currentUrl == menuUrl) {
+        $(this).children("a").addClass("active");
+      }
+    });
+  });
+  </script>
 
 
 </body>
