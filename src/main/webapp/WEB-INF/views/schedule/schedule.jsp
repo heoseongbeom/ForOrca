@@ -5,133 +5,83 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <!-- Favicons -->
-  <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet"> 
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/schedule.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<style>
+  .mb-4{
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
 
-  <!-- Template Main CSS File -->
-  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
-    
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet"> 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.js"></script>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/schedule.css">
-
-
-
+  .fc-left h2{
+    font-size: 25px;
+    margin-left: 10px;
+    padding: 10px;
+    font-family: inherit;
+  }
+</style>
 </head>
 <body>
 
-  <c:if test="${ not empty alertMsg }">
-		<script>
-      Swal.fire({
-          title: "${alertTitle}",
-          text: "${alertMsg}",
-          allowOutsideClick: false,
-          showConfirmButton: true,
-          showCancelButton: false,
-          closeOnConfirm: true,
-          closeOnCancel: true,
-          confirmButtonText: 'OK',
-          confirmButtonColor: 'slategray',
-          cancelButtonText: 'Cancel',
-          imageUrl: null,
-          imageSize: null,
-          timer: null,
-          customClass: '',
-          html: false,
-          animation: true,
-          allowEscapeKey: true,
-          inputType: 'text',
-          inputPlaceholder: '',
-          inputValue: '',
-          showLoaderOnConfirm: false
-    });
-			  
-		</script>
-		<c:remove var="alertTitle" scope="session" />
-		<c:remove var="alertMsg" scope="session" /> <!-- 일회성 메시지의 역할을 하기 위해 지워주기 -->
-	</c:if>
+  
 
     <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="container-fluid d-flex justify-content-between align-items-center" >
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <jsp:include page="../common/header.jsp" />
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a href="mainPage.me">Home</a></li>
-          <li><a href="about.ab">About</a></li>
-          <li><a class="active" href="schedule.sc">Schedule</a></li>
-          <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.co">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="header-social-links">
+      <div class="header-social-links" >
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-		    <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        &nbsp;
+		    <a href="logout.me">Logout</a>
       </div>
 
     </div>
 
   </header><!-- End Header -->
-
-   <div class="p-5">
-  <h2 class="mb-4">Full Calendar</h2>
-  <div class="card">
-    <div class="card-body p-0">
-      <div id="calendar"></div>
+  <section id="hero2" class="d-flex align-items-center" style="justify-content: center;" >
+  <div class="p-5"  data-aos="fade-up">
+    <h2 class="mb-4">Schedule</h2>
+    <div class="card">
+      <div class="card-body p-0">
+        <div id="calendar" style="width:1300px; padding-top: 10px; padding-inline: 1px;"></div>
+      </div>
     </div>
   </div>
-</div>
-
+</section><!-- End Hero -->
   <!-- calendar modal -->
   <div id="modal-view-event" class="modal modal-top fade calendar-modal">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered" style="place-content: center;">
       <form action="" id="detailForm" method="post">
         <div class="modal-content">
           <div class="modal-body">
-            <h3 class="modal-title"><input type="text" class="event-title" name="scheTitle" style="margin-bottom: 5px; border:1px solid lightgray;"></h3>
-            <input type="text" class="event-body1" name="scheDescription" style="margin-bottom: 5px; border:1px solid lightgray;">
-            <select class="form-control" name="scheStatus" style="width:100px; height:35px; margin-bottom: 5px; border:1px solid lightgray;">
-              <option value="close">Close</option>
-              <option value="available">Available</option>
-            </select>
-            <input type="text" class="event-body3" name="scheStatusExp" style=" border:1px solid lightgray;">
+            <h3 class="modal-title" style="color:rgb(75, 84, 92)"></h3>
+            <h4 class="modal-description" style="color:rgb(75, 84, 92)"></h4>
+            <h4 class="modal-start" style="color:rgb(75, 84, 92)"></h4>
+            <h4 class="modal-end" style="color:rgb(75, 84, 92)"></h4>
+            <h4 class="modal-color" style="color:rgb(75, 84, 92)"></h4>
+            <h4 class="modal-status" style="color:rgb(75, 84, 92)"></h4>
+            <h4 class="modal-exp" style="color:rgb(75, 84, 92)"></h4>
+            <input type="hidden" class="scheNo">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="updateBtn">Update</button>
-            <button type="button" class="btn btn-primary" id="deleteBtn">Delete</button>
-            <button type="button" class="btn btn-primary" id="closeBtn1">Close</button>
+            <button type="button" class="btn btn-primary" id="updateBtn" style="background-color: rgb(102, 112, 121); border-color: slategray;">Update</button>
+            
+            <button type="button" onclick="deleteSche();" class="btn btn-primary" id="deleteBtn" style="background-color: rgb(75, 84, 92); border-color: slategray;">Delete</button>
+            <button type="button" class="btn btn-primary" id="closeBtn1" style="background-color: rgb(108, 118, 128); border-color: slategray;">Close</button>
           </div>
         </div>
       </form>
@@ -150,10 +100,34 @@
     });
 
     // 삭제 버튼 클릭시 scheDelete.sc로 이동
-    $('#deleteBtn').on('click', function(){
-      $('#detailForm').attr('action', 'scheDelete.sc');
-      $('#detailForm').submit();
-    });
+      function deleteSche(){
+        Swal.fire({
+        text: "정말 삭제하시겠습니까?",
+        allowOutsideClick: true,
+        showConfirmButton: true,
+        showCancelButton: true,
+        closeOnConfirm: true,
+        closeOnCancel: true,
+        confirmButtonText: 'OK',
+        confirmButtonColor: 'slategray',
+        cancelButtonText: 'Cancel',
+        imageUrl: null,
+        imageSize: null,
+        timer: null,
+        customClass: '',
+        html: false,
+        animation: true,
+        allowEscapeKey: true,
+        inputType: 'text',
+        inputPlaceholder: '',
+        inputValue: '',
+        showLoaderOnConfirm: false
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.href = 'scheDelete.sc?no=' + $('.scheNo').val();
+          }
+        });
+      }
   </script>
 
 <!-- 일정 추가 modal -->
@@ -165,18 +139,18 @@
           <h4>Add Event Detail</h4>        
             <div class="form-group">
               <label>Event name</label>
-              <input type="text" class="form-control" name="scheTitle">
+              <input type="text" class="form-control" name="scheTitle" required>
+            </div>
+            <div class="form-group">
+              <label>Event Description</label>
+              <textarea class="form-control" name="scheDescription" required></textarea>
             </div>
             <div class="form-group">
               <label>Event Date</label>
-              <input type="text" class="datetimepicker form-control" id="scheDate" name="scheDate" style="background: white;" readonly>
+              <input type="text" class="datetimepicker form-control" id="scheDate" name="scheDate" style="background: white;" required readonly>
               <input type="hidden" name="scheDateStart" id="scheDateStart">
               <input type="hidden" name="scheDateEnd" id="scheDateEnd">
             </div>        
-            <div class="form-group">
-              <label>Event Description</label>
-              <textarea class="form-control" name="scheDescription"></textarea>
-            </div>
             <div class="form-group">
               <label>Event Color</label>
               <select class="form-control" name="scheColor">
@@ -184,7 +158,7 @@
                 <option value="blue">Blue</option>
                 <option value="lightgreen">Lightgreen</option>
                 <option value="pinkred">Pinkred</option>
-                <option value="-deepskyblue">Deepskyblue</option>
+                <option value="deepskyblue">Deepskyblue</option>
               </select>
             </div>
             <div class="form-group">
@@ -196,17 +170,19 @@
             </div>
             <div class="form-group">
               <label>Event Status Exp</label>
-              <input type='text' class="form-control" name="scheStatusExp">
+              <input type='text' class="form-control" name="scheStatusExp" required>
             </div>        
         </div>
           <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" >Save</button>
-          <button type="button" class="btn btn-primary" id="closeBtn2">Close</button>        
+          <button type="submit" onclick="return submitSche();" class="btn btn-primary" style="background-color: rgb(108, 118, 128); border-color: slategray;">Save</button>
+          <button type="button" class="btn btn-primary" id="closeBtn2" style="background-color: rgb(75, 84, 92); border-color: slategray;">Close</button>        
         </div>
         </form>
       </div>
     </div>
   </div>
+
+  
 
   <!-- 일정 수정 modal -->
   <div id="modal-view-event-edit" class="modal modal-top fade calendar-modal">
@@ -217,27 +193,27 @@
           <h4>Edit Event Detail</h4>        
             <div class="form-group">
               <label>Event name</label>
-              <input type="text" class="form-control" name="scheName" id="scheEditTitle">
+              <input type="text" class="form-control" name="scheTitle" id="scheEditTitle" required>
               <input type="hidden" name="scheNo" class="scheduleNo" id="scheEditNo">
             </div>
             <div class="form-group">
+              <label>Event Description</label>
+              <textarea class="form-control" name="scheDescription" id="scheEditDes" required></textarea>
+            </div>
+            <div class="form-group">
               <label>Event Date</label>
-              <input type="text" class="datetimepicker form-control" id="scheEditDate" name="scheDate">
+              <input type="text" class="datetimepicker form-control" id="scheEditDate" name="scheDate" style="background: white;" required readonly>
               <input type="hidden" name="scheDateStart" id="scheEditDateStart">
               <input type="hidden" name="scheDateEnd" id="scheEditDateEnd">
             </div>        
-            <div class="form-group">
-              <label>Event Description</label>
-              <textarea class="form-control" name="scheDescription" id="scheEditDes"></textarea>
-            </div>
             <div class="form-group">
               <label>Event Color</label>
               <select class="form-control" name="scheColor" id="scheEditColor">
                 <option value="default">Default</option>
                 <option value="blue">Blue</option>
-                <option value="lightgreen">Lightgreen</option>
-                <option value="pinkred">Pinkred</option>
-                <option value="-deepskyblue">Deepskyblue</option>
+                <option value="ligreen">Lightgreen</option>
+                <option value="red">Pinkred</option>
+                <option value="deepskyblue">Deepskyblue</option>
               </select>
             </div>
             <div class="form-group">
@@ -249,13 +225,13 @@
             </div>
             <div class="form-group">
               <label>Event Status Exp</label>
-              <input type="text" class="form-control" name="scheStatusExp" id="scheEditExp">
+              <input type="text" class="form-control" name="scheStatusExp" id="scheEditExp" required>
             </div>
                    
         </div>
           <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" >Submit</button>
-          <button type="button" class="btn btn-primary" id="closeBtn3">Close</button>        
+          <button type="submit" class="btn btn-primary" style="background-color: rgb(108, 118, 128); border-color: slategray;">Submit</button>
+          <button type="button" class="btn btn-primary" id="closeBtn3" style="background-color: rgb(75, 84, 92); border-color: slategray;">Close</button>        
         </div>
         </form>
       </div>
@@ -267,6 +243,27 @@
 
 
     <script>
+
+        function submitSche(){
+          var scheDate = $('#scheDate').val();
+          
+          if(scheDate == ""){
+            Swal.fire({
+							text: "Please enter a date.",
+							showConfirmButton: true,
+							closeOnConfirm: true,
+							confirmButtonText: 'OK',
+							confirmButtonColor: 'slategray',
+							animation: true,
+							allowEscapeKey: true,
+							inputType: 'text',
+							showLoaderOnConfirm: true
+							});
+            return false;
+          }else{s
+            return true;
+          }
+        };
       $(document).ready(function(){
         $('.datetimepicker').datepicker({
           timepicker: true,
@@ -278,9 +275,11 @@
             var dates = formattedDate.split(" - ");
             $('#scheDateStart').val(dates[0]);
             $('#scheDateEnd').val(dates[1]);
-            console.log(dates[0]);
+            $('#scheEditDateStart').val(dates[0]);
+            $('#scheEditDateEnd').val(dates[1]);
           }
         });
+        
 
         $("#add-event").submit(function(){
           var values = {};
@@ -292,8 +291,16 @@
           );
         });
 
+        $('#updateBtn').on('click', function(){
+                $('#modal-view-event-edit').modal("show");
+        });
+
         // 모달 hide시 기존에 입력했던 값 초기화
         $('#modal-view-event-add').on('hidden.bs.modal', function () {
+          $(this).find('form').trigger('reset');
+        });
+
+        $('#modal-view-event-edit').on('hidden.bs.modal', function () {
           $(this).find('form').trigger('reset');
         });
 
@@ -313,6 +320,10 @@
         $('#closeBtn3').on('click', function(){
           $('#modal-view-event-edit').modal('hide');
         });
+
+        $('#updateBtn').on('click', function(){
+          $('#modal-view-event').modal('hide');
+        })
 
       });
 
@@ -345,16 +356,19 @@
                   
                   // iterate over the response and format the events array
                   $.each(response, function(index, event) {
-                    events.push({
-                      no: event.no,
-                      title: event.title,
-                      description: event.description,
-                      start: event.start,
-                      end: event.end,
-                      color: event.color,
-                      status: event.status,
-                      exp: event.exp
-                    });
+                    // check if the event already exists
+                    if (!events.some(function(existingEvent) { return existingEvent.no === event.no; })) {
+                      events.push({
+                        no: event.no,
+                        title: event.title,
+                        description: event.description,
+                        start: event.start,
+                        end: event.end,
+                        color: event.color,
+                        status: event.status,
+                        exp: event.exp
+                      });
+                    }
                   });
                   callback(events);
                 },error:function(){
@@ -364,21 +378,40 @@
             },
             dayClick: function(date, jsEvent, view) {
               $('#modal-view-event-add').modal("show");
-              var event = {};
-              $('.event-title').val(event.title);
-              $('.event-body1').val(event.description);
-              $('.event-body2').val(event.status);
-              $('.event-body3').val(event.exp);
-              $('.scheduleNo').val(event.no);
+              
             },
             eventClick: function(event, jsEvent, view) {
               $('#modal-view-event').modal("show");
-              var event = {};
-              $('.event-title').val(event.title);
-              $('.event-body1').val(event.description);
-              $('.event-body2').val(event.status);
-              $('.event-body3').val(event.exp);
-              $('.scheduleNo').val(event.no);
+              $('.modal-title').html(event.title);
+              $('.modal-description').html(event.description);
+              $('.modal-start').html("start date : " + event.start.format("MM/DD/YYYY h:mm A"));
+              if(event.end != null){
+                $('.modal-end').html("end date : " + event.end.format("MM/DD/YYYY h:mm A"));
+              }
+              $('.modal-color').html("color : " + event.color);
+              $('.modal-status').html("status : " + event.status);
+              $('.modal-exp').html("status exp : " + event.exp);
+              $('.scheNo').val(event.no);
+
+              // update 버튼 클릭시 value값 넘기기
+              $('#scheEditTitle').val(event.title);
+              $('#scheEditDes').val(event.description);
+              if (event.end != null) {
+                var startDate = moment(event.start).format('MM/DD/YYYY h:mm A');
+                var endDate = moment(event.end).format('MM/DD/YYYY h:mm A');
+                $('#scheEditDate').val(startDate + ' - ' + endDate);
+                $('#scheEditDateStart').val(startDate);
+                $('#scheEditDateEnd').val(endDate);
+              } else {
+                var startDate = moment(event.start).format('MM/DD/YYYY h:mm A');
+                $('#scheEditDate').val(startDate);
+                $('#scheEditDateStart').val(startDate);
+              }
+              $('#scheEditColor').val(event.color);
+              $('#scheEditStatus').val(event.status);
+              $('#scheEditExp').val(event.exp);
+              $('#scheEditNo').val(event.no);
+              
             },
             eventDrop: function(event, delta, revertFunc) {
               $.ajax({
