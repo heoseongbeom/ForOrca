@@ -8,6 +8,7 @@
 		<result column="port_origin_photo" property="portOriginPhoto" />
 		<result column="port_change_photo" property="portChangePhoto" />
 		<result column="port_category" property="portCategory" />
+		<result column="port_date" property="portDate" />
 	</resultMap>
 	
 	<!-- portfolio 페이지 select 기능 -->
@@ -18,6 +19,7 @@
 			 , port_origin_photo
 			 , port_change_photo
 			 , port_category
+			 , port_date
 		  from portfolio
 	</select>
 	
@@ -31,6 +33,7 @@
 		  , port_origin_photo
 		  , port_change_photo
 		  , port_category  
+		  , port_date
 		  )
 		  values
 		  (
@@ -38,7 +41,8 @@
 		  , #{portText}
 		  , #{portOriginPhoto}
 		  , #{portChangePhoto}
-		  , #{portCategory}  
+		  , #{portCategory} 
+		  , #{portDate} 
 		  )
 	</insert>
 	
@@ -50,6 +54,7 @@
 		     , port_origin_photo
 		     , port_change_photo
 		     , port_category
+		     , port_date
 		 from portfolio
 		where port_no = #{portNo}
 	</select>
@@ -62,6 +67,7 @@
 		     , port_origin_photo = #{portOriginPhoto}
 		     , port_change_photo = #{portChangePhoto}
 		     , port_category = #{portCategory}
+		     , port_date = #{portDate}
 		 where port_no = #{portNo}
 	</update>
 	
