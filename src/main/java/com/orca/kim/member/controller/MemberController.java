@@ -34,7 +34,9 @@ public class MemberController {
 			MainPage mp = mService.selectMain();
 			if(loginUser != null) {
 				session.setAttribute("loginUser", loginUser);
-				mv.addObject("mp", mp).setViewName("main");
+				mv.addObject("mp", mp)
+				  .addObject("loginUser", loginUser)
+				  .setViewName("redirect:/mainPage.me");
 				return mv;
 			}else {
 				session.setAttribute("alertTitle", "로그인 실패");
@@ -87,9 +89,12 @@ public class MemberController {
 		
 		// 메인 페이지 수정 후 호울 메소드
 		@RequestMapping("mainPage.me")
-		public ModelAndView updateMainPage(ModelAndView mv) {
+		public ModelAndView updateMainPage(ModelAndView mv, HttpSession session) {
+			// 세션에서 로그인한 사용자 정보 가져오기
+		    Member loginUser = (Member) session.getAttribute("loginUser");
 			MainPage mp = mService.selectMain();
-			mv.addObject("mp", mp).setViewName("main");
+			mv.addObject("mp", mp)
+			  .setViewName("main");
 			return mv;
 		}
 		
