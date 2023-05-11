@@ -24,6 +24,12 @@ public class ScheduleServiceImpl implements ScheduleService{
 		return sDao.ajaxSelectScheduleList(sqlSession);
 	}
 	
+	// scheduleClient 페이지 fullcalendar 일정 조회
+	@Override
+	public ArrayList<Schedule> ajaxSelectScheduleClientList(){
+		return sDao.ajaxSelectScheduleClientList(sqlSession);
+	}
+	
 	// schedule 페이지 insert
 	@Override
 	public int insertSchedule(Schedule s) {
@@ -40,6 +46,12 @@ public class ScheduleServiceImpl implements ScheduleService{
 	@Override
 	public int updateScheduleDetail(Schedule s) {
 		return sDao.updateScheduleDetail(s, sqlSession);
+	}
+	
+	// schedule 페이지 delete
+	@Override
+	public int deleteSchedule(int scheNo) {
+		return sDao.deleteSchedule(scheNo, sqlSession);
 	}
 
 }
