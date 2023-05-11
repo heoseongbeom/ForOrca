@@ -5,51 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- Favicons -->
-  <link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
-  <link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 </head>
 <body>
 
-	<!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="main.me"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">orca</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a  href="mainPage.me">Home</a></li>
-          <li><a class="active" href="about.ab">About</a></li>
-          <li><a href="schedule.sc">Schedule</a></li>
-          <li><a href="finance.me">Finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.co">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+		<jsp:include page="../common/header.jsp" />
 
       <div class="header-social-links">
         <a href="https://www.instagram.com/tattoo_by_orca/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-		<a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">Logout</a>
+		&nbsp;
+		<a href="logout.me">Logout</a>
         <c:if test="${ loginUser.memState eq '1' }">
-        	<a href="aboutUpdateForm.ab" data-toggle="modal">Update Page</a>
+        	<a href="aboutUpdateForm.ab">Update Page</a>
         </c:if>
       </div>
 
@@ -207,95 +177,8 @@
 	        </div>
 	
 	      </div>
-	    </section><!-- End Facts Section -->
-	
-	    <!-- ======= Testimonials Section ======= -->
-	    <!--  
-	    <section id="testimonials" class="testimonials">
-	      <div class="container" data-aos="fade-up">
-	
-	        <div class="section-title">
-	          <h2>Story</h2>
-	          <p>${ a.aboutStory }</p>
-	        </div>
-	
-	        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-	          <div class="swiper-wrapper">
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryChangeImg1 }" class="testimonial-img" alt="">
-	                <h3>${ a.aboutStOneText1 }</h3>
-	                <h4>${ a.aboutStOneText2 }</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  ${ a.aboutStOneText3 }	
-	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item 
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryChangeImg2 }" class="testimonial-img" alt="">
-	                <h3>${ a.aboutStTwoText1 }</h3>
-	                <h4>${ a.aboutStTwoText2 }</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  ${ a.aboutStTwoText3 }
-	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item 
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryChangeImg3 }" class="testimonial-img" alt="">
-	                <h3>${ a.aboutStThreeText1 }</h3>
-	                <h4>${ a.aboutStThreeText2 }</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  ${ a.aboutStThreeText3 }
-	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item 
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryChangeImg4 }" class="testimonial-img" alt="">
-	                <h3>${ a.aboutStFourText1 }</h3>
-	                <h4>${ a.aboutStFourText2 }</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  ${ a.aboutStFourText3 }
-	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item 
-	
-	            <div class="swiper-slide">
-	              <div class="testimonial-item">
-	                <img src="${ a.aboutStoryChangeImg5 }" class="testimonial-img" alt="">
-	                <h3>${ a.aboutStFiveText1 }</h3>
-	                <h4>${ a.aboutStFiveText2 }</h4>
-	                <p>
-	                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-	                  ${ a.aboutStFiveText3 }
-	                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-	                </p>
-	              </div>
-	            </div><!-- End testimonial item 
-	
-	          </div>
-	          <div class="swiper-pagination"></div>
-	        </div>
-	
-	      </div>
-	    </section> 
-	     End Testimonials Section -->
-	
-	  </main><!-- End #main -->
+	    </section>
+	</main>
 	
 	<jsp:include page="../common/footer.jsp"/>
 	
