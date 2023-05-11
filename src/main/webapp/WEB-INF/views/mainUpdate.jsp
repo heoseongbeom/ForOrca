@@ -6,21 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
-	<!-- Favicons -->
-	<link href="${pageContext.request.contextPath}/resources/img/favicon.png" rel="icon">
-	<link href="${pageContext.request.contextPath}/resources/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-	<!-- Vendor CSS Files -->
-	<link href="${pageContext.request.contextPath}/resources/vendor/aos/aos.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <style>
 	.btn {
 		background-color: #000000;
@@ -63,31 +48,14 @@
   <header id="header" class="fixed-top" style="padding: 10px;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0" style="display:flex;"><img src="${pageContext.request.contextPath}/resources/img/orca.jpg">${ mp.mainAdminName }</h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="active" href="mainPage.me">Home</a></li>
-          <li><a href="about.ab">About</a></li>
-          <li><a href="schedule.sc">schedule</a></li>
-          <li><a href="finance.me">finance</a></li>
-          <li><a href="portfolio.po">Portfolio</a></li>
-          <li><a href="contact.co">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+		<jsp:include page="common/header.jsp" />
       
          
-      
-     
-
-      <div class="header-social-links" style="display: contents;">
-        <input type="text" name="mainInstarAddress" class="form-control" style="width:400px;" value="${ mp.mainInstarAddress }">
-        <button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
-        <a href="logout.me" class="" data-toggle="modal" data-target="#logoutModal">logout</a>
-      </div>
+		<div class="header-social-links" style="display: contents;">
+			<input type="text" name="mainInstarAddress" class="form-control" style="width:400px;" value="${ mp.mainInstarAddress }">
+			<button type="submit" class="btn" style="padding: initial; width: 120px; height: 40px; ">수정완료</button>
+			<a href="logout.me" data-target="#logoutModal">logout</a>
+		</div>
 
 	
     </div>
